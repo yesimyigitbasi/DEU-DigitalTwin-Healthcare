@@ -8,36 +8,36 @@ BLEScan* pBLEScan;
 
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     void onResult(BLEAdvertisedDevice advertisedDevice) {
-      Serial.printf("Advertised Device: %s\n", advertisedDevice.toString().c_str());
+        // Check if the device name and address match the target
+        if (advertisedDevice.haveName() && 
+            advertisedDevice.getName() == "OMIYA-C39-HW" &&
+            advertisedDevice.getAddress().equals(BLEAddress("0c:95:41:00:00:23"))) {
 
-      // Display the raw advertising data
-      Serial.print("Raw Data: ");
-      for (int i = 0; i < advertisedDevice.getPayloadLength(); i++) {
-          Serial.print(advertisedDevice.getPayload()[i], HEX);
-          Serial.print(" ");
-      }
-      Serial.println();
+            Serial.println("Raw Data:");
+            const uint8_t* payload = advertisedDevice.getPayload();
+            size_t payloadLength = advertisedDevice.getPayloadLength();
+            for (size_t i = 0; i < payloadLength; i++) {
+                Serial.printf("%02X ", payload[i]);
+            }
+            Serial.println();
+        }
     }
 };
 
 void setup() {
-  Serial.begin(115200);
-  Serial.println("Scanning...");
+    Serial.begin(115200);
+    Serial.println("Scanning...");
 
-  BLEDevice::init("");
-  pBLEScan = BLEDevice::getScan(); // Create new scan
-  pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
-  pBLEScan->setActiveScan(true); // Active scan uses more power, but gets results faster
-  pBLEScan->setInterval(100);
-  pBLEScan->setWindow(99);  // Less or equal setInterval value
+    BLEDevice::init("");
+    pBLEScan = BLEDevice::getScan(); // Create new scan
+    pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
+    pBLEScan->setActiveScan(true); // Active scan uses more power, but gets results faster
+    pBLEScan->setInterval(100);
+    pBLEScan->setWindow(99);  // Less than or equal to setInterval value
 }
 
 void loop() {
-  // Put your main code here, to run repeatedly:
-  BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
-  Serial.print("Devices found: ");
-  Serial.println(foundDevices.getCount());
-  Serial.println("Scan done!");
-  pBLEScan->clearResults();   // Delete results from BLEScan buffer to release memory
-  delay(2000);
+    BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
+    pBLEScan->clearResults(); // Clear results before starting the next scan
+    delay(2000);
 }
