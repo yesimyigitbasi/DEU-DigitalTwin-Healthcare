@@ -1,43 +1,83 @@
-#include <BLEDevice.h>
-#include <BLEUtils.h>
-#include <BLEScan.h>
-#include <BLEAdvertisedDevice.h>
+/** Example of continuous scanning for BLE advertisements.
+ * This example will scan forever while consuming as few resources as possible
+ * and report all advertisments on the serial monitor.
+ *
+ * Created: on January 31 2021
+ *      Author: H2zero
+ *
+ */
 
-int scanTime = 5; // In seconds
-BLEScan* pBLEScan;
+#include "NimBLEDevice.h"
 
-class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
-    void onResult(BLEAdvertisedDevice advertisedDevice) {
-        // Check if the device name and address match the target
-        if (advertisedDevice.haveName() && 
-            advertisedDevice.getName() == "OMIYA-C39-HW" &&
-            advertisedDevice.getAddress().equals(BLEAddress("0c:95:41:00:00:23"))) {
+NimBLEScan* pBLEScan;
 
+class MyAdvertisedDeviceCallbacks: public NimBLEAdvertisedDeviceCallbacks {
+    void onResult(NimBLEAdvertisedDevice* advertisedDevice) {
+      if (advertisedDevice->haveName() && 
+          advertisedDevice->getName() == "OMIYA-C39-HW" &&
+          advertisedDevice->getAddress().equals(NimBLEAddress("0c:95:41:00:00:23"))) {
             Serial.println("Raw Data:");
-            const uint8_t* payload = advertisedDevice.getPayload();
-            size_t payloadLength = advertisedDevice.getPayloadLength();
+            const uint8_t* payload = advertisedDevice->getPayload();
+            size_t payloadLength = advertisedDevice->getPayloadLength();
             for (size_t i = 0; i < payloadLength; i++) {
                 Serial.printf("%02X ", payload[i]);
             }
-            Serial.println();
+          Serial.println();
         }
+
+
     }
 };
 
 void setup() {
-    Serial.begin(115200);
-    Serial.println("Scanning...");
+  Serial.begin(115200);
+  Serial.println("Scanning...");
 
-    BLEDevice::init("");
-    pBLEScan = BLEDevice::getScan(); // Create new scan
-    pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
-    pBLEScan->setActiveScan(true); // Active scan uses more power, but gets results faster
-    pBLEScan->setInterval(100);
-    pBLEScan->setWindow(99);  // Less than or equal to setInterval value
+/** *Optional* Sets the filtering mode used by the scanner in the BLE controller.
+ *
+ *  Can be one of:
+ *  CONFIG_BTDM_SCAN_DUPL_TYPE_DEVICE (0) (default)
+ *  Filter by device address only, advertisements from the same address will be reported only once.
+ *
+ *  CONFIG_BTDM_SCAN_DUPL_TYPE_DATA (1)
+ *  Filter by data only, advertisements with the same data will only be reported once,
+ *  even from different addresses.
+ *
+ *  CONFIG_BTDM_SCAN_DUPL_TYPE_DATA_DEVICE (2)
+ *  Filter by address and data, advertisements from the same address will be reported only once,
+ *  except if the data in the advertisement has changed, then it will be reported again.
+ *
+ *  Can only be used BEFORE calling NimBLEDevice::init.
+*/
+  NimBLEDevice::setScanFilterMode(CONFIG_BTDM_SCAN_DUPL_TYPE_DEVICE);
+
+/** *Optional* Sets the scan filter cache size in the BLE controller.
+ *  When the number of duplicate advertisements seen by the controller
+ *  reaches this value it will clear the cache and start reporting previously
+ *  seen devices. The larger this number, the longer time between repeated
+ *  device reports. Range 10 - 1000. (default 20)
+ *
+ *  Can only be used BEFORE calling NimBLEDevice::init.
+ */
+  NimBLEDevice::setScanDuplicateCacheSize(200);
+
+  NimBLEDevice::init("");
+
+  pBLEScan = NimBLEDevice::getScan(); //create new scan
+  // Set the callback for when devices are discovered, no duplicates.
+  pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks(), false);
+  pBLEScan->setActiveScan(true); // Set active scanning, this will get more data from the advertiser.
+  pBLEScan->setInterval(97); // How often the scan occurs / switches channels; in milliseconds,
+  pBLEScan->setWindow(37);  // How long to scan during the interval; in milliseconds.
+  pBLEScan->setMaxResults(0); // do not store the scan results, use callback only.
 }
 
 void loop() {
-    BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
-    pBLEScan->clearResults(); // Clear results before starting the next scan
-    delay(2000);
+  // If an error occurs that stops the scan, it will be restarted here.
+  if(pBLEScan->isScanning() == false) {
+      // Start scan with: duration = 0 seconds(forever), no scan end callback, not a continuation of a previous scan.
+      pBLEScan->start(0, nullptr, false);
+  }
+
+  delay(2000);
 }
