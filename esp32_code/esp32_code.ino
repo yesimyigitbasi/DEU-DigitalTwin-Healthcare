@@ -9,7 +9,7 @@ NimBLEScan* pBLEScan;
 
 const char* ssid = "Zyxel_4A61";
 const char* password = "QXLYLP83ML";
-const char* apiUrl = "20.62.111.133:5000/api/receive_data";
+const char* apiUrl = "20.62.111.133:80/api/receive_data";
 
 
 
