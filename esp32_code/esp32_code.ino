@@ -3,13 +3,39 @@
 #include <WiFi.h> // Include the Wi-Fi library
 #include <HTTPClient.h>
 
-
 NimBLEScan* pBLEScan;
 
 
 const char* ssid = "Zyxel_4A61";
 const char* password = "QXLYLP83ML";
 const char* apiUrl = "http://20.62.111.133:80/api/receive_data";
+const char* localUrl = "http://192.168.1.30:5001/data";
+String rawData = "C005002500000000210C9541000023";
+const char* unit_kg="2";
+
+long rawDataKG(String data){
+  String kg = data.substring(4,8);
+
+long decimalValue = strtol(kg.c_str(), NULL, 16);
+  return decimalValue;
+}
+
+String unitOfMeasure(String data){
+  String unit = data.substring(16,17);
+  if(unit.equals(unit_kg)){
+    return "kg";
+  }
+  else{
+    return "pound";
+  }
+
+}
+
+int measureDone(String data){
+  String measured = data.substring(17,18);
+  return measured.toInt();
+}
+
 
 
 
@@ -21,15 +47,18 @@ class MyAdvertisedDeviceCallbacks : public NimBLEAdvertisedDeviceCallbacks {
             
             // Create a JSON object to store your data
             StaticJsonDocument<200> jsonDoc;
-            jsonDoc["device_name"] =  "OMIYA-C39-HW"; //advertisedDevice->getName();
-            jsonDoc["device_address"] = "0c:95:41:00:00:23"; //advertisedDevice->getAddress().toString();
+            if(measureDone(rawData) == 1 ){
+            //jsonDoc["device_name"] =  "OMIYA-C39-HW"; //advertisedDevice->getName();
+            //jsonDoc["device_address"] = "0c:95:41:00:00:23"; //advertisedDevice->getAddress().toString();
+              jsonDoc["measure"] = rawDataKG(rawData);
+              jsonDoc["unit"] = unitOfMeasure(rawData);
+              // Convert JSON to a string
+              String jsonData;
+              serializeJson(jsonDoc, jsonData);
 
-            // Convert JSON to a string
-            String jsonData;
-            serializeJson(jsonDoc, jsonData);
-
-            // Send the data to your Flask API
-            sendToFlaskAPI(jsonData);
+              // Send the data to your Flask API
+              sendToFlaskAPI(jsonData);
+            }
         //}
     }
 
@@ -37,8 +66,6 @@ class MyAdvertisedDeviceCallbacks : public NimBLEAdvertisedDeviceCallbacks {
     HTTPClient http;
     http.begin(apiUrl);
     http.addHeader("Content-Type", "application/json");
-
-
 
     int httpResponseCode = http.POST(data);
     if (httpResponseCode > 0) {
@@ -118,7 +145,6 @@ void onResult(NimBLEAdvertisedDevice* advertisedDevice) {
 }
 */
 
-
 String payloadToString(const uint8_t* payload, size_t length) {
     String result = "";
     for (size_t i = 0; i < length; i++) {
@@ -127,7 +153,9 @@ String payloadToString(const uint8_t* payload, size_t length) {
         result += hex;
     }
     return result;
+
 }
+
 
 /*
 void sendJsonToServer(String jsonString) {
