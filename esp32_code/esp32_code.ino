@@ -6,22 +6,36 @@
 NimBLEScan* pBLEScan;
 
 
-const char* ssid = "Zyxel_4A61";
-const char* password = "QXLYLP83ML";
+const char* ssid = "Starbucks";
+const char* password = "starbucks2019";
 const char* apiUrl = "http://20.62.111.133:80/api/receive_data";
-const char* localUrl = "http://192.168.1.30:5001/data";
-String rawData = "C005002500000000210C9541000023";
+const char* localUrl = "hhttp://95.183.155.86:80/data";
+//String rawData = "C005052500000000310C9541000023";
 const char* unit_kg="2";
 
-long rawDataKG(String data){
-  String kg = data.substring(4,8);
+String payloadToString(const uint8_t* payload, size_t length) {
+    String result = "";
+    for (size_t i = 0; i < length; i++) {
+        char hex[3];
+        sprintf(hex, "%02X", payload[i]);
+        result += hex;
+    }
+    return result;
 
-long decimalValue = strtol(kg.c_str(), NULL, 16);
-  return decimalValue;
+}
+
+String rawDataKG(String data){
+  String kg = data.substring(8,12);
+  long decimalValue = strtol(kg.c_str(), NULL, 16);
+  char* point = ".";
+  String stringKg = String(decimalValue);
+  char lastChar = stringKg.charAt(stringKg.length() - 1);
+  stringKg =   stringKg.substring(0,stringKg.length()-1) + point + lastChar;
+  return stringKg;
 }
 
 String unitOfMeasure(String data){
-  String unit = data.substring(16,17);
+  String unit = data.substring(20,21);
   if(unit.equals(unit_kg)){
     return "kg";
   }
@@ -32,7 +46,7 @@ String unitOfMeasure(String data){
 }
 
 int measureDone(String data){
-  String measured = data.substring(17,18);
+  String measured = data.substring(21,22);
   return measured.toInt();
 }
 
@@ -41,9 +55,11 @@ int measureDone(String data){
 
 class MyAdvertisedDeviceCallbacks : public NimBLEAdvertisedDeviceCallbacks {
     void onResult(NimBLEAdvertisedDevice* advertisedDevice) {
-       /* if (advertisedDevice->haveName() &&
+       if (advertisedDevice->haveName() &&
             advertisedDevice->getName() == "OMIYA-C39-HW" &&
-            advertisedDevice->getAddress().equals(NimBLEAddress("0c:95:41:00:00:23"))) { */
+            advertisedDevice->getAddress().equals(NimBLEAddress("0c:95:41:00:00:23"))) { 
+            String rawData = payloadToString(advertisedDevice->getPayload(), advertisedDevice->getPayloadLength());
+            Serial.println(rawData);
             
             // Create a JSON object to store your data
             StaticJsonDocument<200> jsonDoc;
@@ -52,14 +68,14 @@ class MyAdvertisedDeviceCallbacks : public NimBLEAdvertisedDeviceCallbacks {
             //jsonDoc["device_address"] = "0c:95:41:00:00:23"; //advertisedDevice->getAddress().toString();
               jsonDoc["measure"] = rawDataKG(rawData);
               jsonDoc["unit"] = unitOfMeasure(rawData);
-              // Convert JSON to a string
+
               String jsonData;
               serializeJson(jsonDoc, jsonData);
 
               // Send the data to your Flask API
               sendToFlaskAPI(jsonData);
             }
-        //}
+        }
     }
 
     void sendToFlaskAPI(const String& data) {
@@ -114,67 +130,6 @@ void setup() {
   pBLEScan->setWindow(37);  // How long to scan during the interval; in milliseconds.
   pBLEScan->setMaxResults(0); // do not store the scan results, use callback only.
 }
-
-/*
-void onResult(NimBLEAdvertisedDevice* advertisedDevice) {
-    // Regardless of the device, always create and send the JSON data
-    StaticJsonDocument<200> jsonDoc;
-    jsonDoc["device_name"] = advertisedDevice->getName();
-    jsonDoc["mac_address"] = advertisedDevice->getAddress().toString();
-    jsonDoc["raw_data"] = payloadToString(advertisedDevice->getPayload(), advertisedDevice->getPayloadLength());
-    
-    // Serialize the JSON object to a string
-    String jsonString;
-    serializeJson(jsonDoc, jsonString);
-    
-    // Send JSON data to the server
-    sendJsonToServer(jsonString);
-
-    if (advertisedDevice->haveName() && 
-        advertisedDevice->getName() == "OMIYA-C39-HW" &&
-        advertisedDevice->getAddress().equals(NimBLEAddress("0c:95:41:00:00:23"))) {
-            Serial.println("Raw Data:");
-            const uint8_t* payload = advertisedDevice->getPayload();
-            size_t payloadLength = advertisedDevice->getPayloadLength();
-            for (size_t i = 0; i < payloadLength; i++) {
-                Serial.printf("%02X ", payload[i]);
-            }
-            Serial.println();
-    }
-    
-}
-*/
-
-String payloadToString(const uint8_t* payload, size_t length) {
-    String result = "";
-    for (size_t i = 0; i < length; i++) {
-        char hex[3];
-        sprintf(hex, "%02X", payload[i]);
-        result += hex;
-    }
-    return result;
-
-}
-
-
-/*
-void sendJsonToServer(String jsonString) {
-    HTTPClient http;
-    http.begin("http://20.62.111.133/receive_data");
-    http.addHeader("Content-Type", "application/json");
-
-    int httpResponseCode = http.POST(jsonString);
-
-    if (httpResponseCode == 200) {
-        Serial.println("HTTP Response code: 200 - Data sent successfully");
-    } else {
-        Serial.print("HTTP Error: ");
-        Serial.println(httpResponseCode);
-    }
-
-    http.end();
-}
-*/
 
 
 void loop() {
