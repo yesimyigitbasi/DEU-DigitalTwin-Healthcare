@@ -65,7 +65,7 @@ class MyAdvertisedDeviceCallbacks : public NimBLEAdvertisedDeviceCallbacks {
             StaticJsonDocument<200> jsonDoc;
             if(measureDone(rawData) == 1 ){
             //jsonDoc["device_name"] =  "OMIYA-C39-HW"; //advertisedDevice->getName();
-            //jsonDoc["device_address"] = "0c:95:41:00:00:23"; //advertisedDevice->getAddress().toString();
+              jsonDoc["user_id"] = advertisedDevice->getAddress().toString();
               jsonDoc["measure"] = rawDataKG(rawData);
               jsonDoc["unit"] = unitOfMeasure(rawData);
 

@@ -11,6 +11,7 @@ def receive_json():
     try:
 
             data = request.json
+            user_id = data['user_id']
             measure = data['measure']
             unit = data['unit']
             turkish_time = pytz.timezone('Europe/Istanbul')
@@ -18,7 +19,7 @@ def receive_json():
             conn = sqlite3.connect('healthcare.db')
             cursor = conn.cursor()
 
-            cursor.execute("INSERT INTO measurement (weight,weight_type,date_of_measurement) VALUES (?,?,?)", (measure,unit,timeonTurkey))
+            cursor.execute("INSERT INTO measurement (user_id,weight,weight_type,date_of_measurement) VALUES (?,?,?,?)", (user_id,measure,unit,timeonTurkey))
             conn.commit()
             cursor.close()
 
@@ -29,4 +30,6 @@ def receive_json():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
+
+
 
