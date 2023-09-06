@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest package="com.alpersapplication.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:largeHeap="true"
+        android:name="com.alpersapplication.app.appcomponents.di.MyApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+        <activity android:exported="true"
+            android:name="com.alpersapplication.app.modules.homescreen.ui.HomeScreenActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.alpersapplication.app.modules.wanttodeleteacc.ui.WantToDeleteAccActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.statistics.ui.StatisticsActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.login.ui.LogInActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.createanaccount.ui.CreateAnAccountActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.notifications.ui.NotificationsActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.accountgoals.ui.AccountGoalsActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.statisticstargetweight.ui.StatisticsTargetWeightActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.statisticsweighthistory.ui.StatisticsWeightHistoryActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.cantconnecttointernet.ui.CantConnectToInternetActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.accountpersonalinfo.ui.AccountPersonalInfoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.notificationsviewmessage.ui.NotificationsViewMessageActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.wanttosignout.ui.WantToSignOutActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.statisticsstepshistory.ui.StatisticsStepsHistoryActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.gatewaypairing.ui.GatewayPairingActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.account.ui.AccountActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.alpersapplication.app.modules.accountaccinfo.ui.AccountAccInfoActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>
