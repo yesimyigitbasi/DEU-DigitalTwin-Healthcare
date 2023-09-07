@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="homeScreenVM" type="com.alpersapplication.app.modules.homescreen.data.viewmodel.HomeScreenVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameHomescreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <LinearLayout android:id="@+id/linearColumnpicturesquare"
+            android:layout_gravity="top|start"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <ImageView android:gravity="start"
+                android:id="@+id/imagePicturesquare"
+                android:layout_height="@dimen/_315pxv"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                cornerRadius="@{@dimen/_12pxh}"
+                imageRes="@{@drawable/img_picturesquare}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_picturesquare"/>
+            <TextView android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:id="@+id/txtLearnyourbody"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_47pxh"
+                android:layout_marginStart="@dimen/_47pxh"
+                android:layout_marginTop="@dimen/_35pxv"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_6pxh"
+                android:singleLine="true"
+                android:text="@{homeScreenVM.homeScreenModel.txtLearnyourbody}"
+                style="@style/txtInterbold24" tools:text="@string/msg_learn_your_body"/>
+            <TextView android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:id="@+id/txtLetsstartbuil"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_47pxh"
+                android:layout_marginStart="@dimen/_47pxh"
+                android:layout_marginTop="@dimen/_21pxv"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:singleLine="true"
+                android:text="@{homeScreenVM.homeScreenModel.txtLetsstartbuil}"
+                style="@style/txtInterregular16" tools:text="@string/msg_let_s_start_bui"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtCreateanaccou"
+                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_112pxh"
+                android:layout_marginStart="@dimen/_112pxh"
+                android:layout_marginTop="@dimen/_225pxv"
+                android:layout_width="wrap_content"
+                android:lineSpacingExtra="@dimen/_3pxh"
+                android:singleLine="true"
+                android:text="@{homeScreenVM.homeScreenModel.txtCreateanaccou}"
+                style="@style/txtIntersemibold14" tools:text="@string/msg_create_an_accou"/>
+            <LinearLayout android:gravity="center_vertical"
+                android:id="@+id/linearRowconfirmation"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_47pxh"
+                android:layout_marginStart="@dimen/_47pxh"
+                android:layout_marginTop="@dimen/_42pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConfirmation"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_weight="0.77"
+                    android:layout_width="0dp"
+                    android:lineSpacingExtra="@dimen/_4pxh"
+                    android:singleLine="true"
+                    android:text="@{homeScreenVM.homeScreenModel.txtConfirmation}"
+                    style="@style/txtInterregular16" tools:text="@string/msg_already_have_an"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSignin"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12pxh"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="0.23"
+                    android:layout_width="0dp"
+                    android:lineSpacingExtra="@dimen/_4pxh"
+                    android:singleLine="true"
+                    android:text="@{homeScreenVM.homeScreenModel.txtSignin}"
+                    style="@style/txtIntersemibold16"
+                    textUnderline="true" tools:text="@string/lbl_sign_in"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>
