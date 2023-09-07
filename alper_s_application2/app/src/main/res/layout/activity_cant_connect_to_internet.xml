@@ -26,45 +26,55 @@
                 android:layout_marginStart="@dimen/_43pxh"
                 android:layout_marginTop="@dimen/_300pxv"
                 android:layout_width="@dimen/_273pxh" style="@style/groupStylecornerRadius_3">
-                <LinearLayout android:id="@+id/linearColumnconnecttothe"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_1pxh"
-                    android:layout_width="wrap_content"
-                    android:orientation="vertical" style="@style/groupStylewhite_A700cornerRadius">
-                    <TextView android:ellipsize="end"
-                        android:gravity="center_horizontal"
-                        android:id="@+id/txtConnecttothe"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_49pxh"
-                        android:layout_marginStart="@dimen/_49pxh"
-                        android:layout_marginTop="@dimen/_29pxv"
-                        android:layout_width="match_parent"
-                        android:lineSpacingExtra="@dimen/_4pxh"
-                        android:singleLine="true"
-                        android:text="@{cantConnectToInternetVM.cantConnectToInternetModel.txtConnecttothe}"
-                        style="@style/txtIntersemibold16" tools:text="@string/msg_connect_to_the"/>
-                    <TextView android:ellipsize="end"
-                        android:id="@+id/txtYoureoffline"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_80pxv"
-                        android:layout_marginEnd="@dimen/_49pxh"
-                        android:layout_marginStart="@dimen/_49pxh"
-                        android:layout_marginTop="@dimen/_17pxv"
-                        android:layout_width="wrap_content"
-                        android:lineSpacingExtra="@dimen/_3pxh"
-                        android:singleLine="true"
-                        android:text="@{cantConnectToInternetVM.cantConnectToInternetModel.txtYoureoffline}"
-                        style="@style/txtInterregular14" tools:text="@string/lbl_you_re_offline"/>
-                </LinearLayout>
-                <View android:background="@color/bluegray_600"
-                    android:id="@+id/lineLineThirtyFour"
-                    android:layout_gravity="bottom|start"
-                    android:layout_height="@dimen/_1pxv"
-                    android:layout_marginBottom="@dimen/_50pxv"
-                    android:layout_marginTop="@dimen/_50pxv" android:layout_width="@dimen/_273pxh"/>
+
             </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linearColumnconnecttothe"
+                style="@style/groupStylewhite_A700cornerRadius"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_1pxh"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtConnecttothe"
+                    style="@style/txtIntersemibold16"
+                    android:layout_width="233dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_49pxh"
+                    android:layout_marginTop="@dimen/_29pxv"
+                    android:layout_marginEnd="@dimen/_49pxh"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="@dimen/_4pxh"
+                    android:singleLine="true"
+                    android:text="@{cantConnectToInternetVM.cantConnectToInternetModel.txtConnecttothe}"
+                    tools:text="@string/msg_connect_to_the" />
+
+                <TextView
+                    android:id="@+id/txtYoureoffline"
+                    style="@style/txtInterregular14"
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_49pxh"
+                    android:layout_marginTop="@dimen/_17pxv"
+                    android:layout_marginEnd="@dimen/_49pxh"
+                    android:layout_marginBottom="@dimen/_80pxv"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_3pxh"
+                    android:singleLine="true"
+                    android:text="@{cantConnectToInternetVM.cantConnectToInternetModel.txtYoureoffline}"
+                    tools:text="@string/lbl_you_re_offline" />
+
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="retry" />
+            </LinearLayout>
         </FrameLayout>
     </FrameLayout>
 </layout>

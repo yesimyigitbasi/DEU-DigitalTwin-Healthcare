@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable name="accountGoalsVM" type="com.alpersapplication.app.modules.accountgoals.data.viewmodel.AccountGoalsVM"/>
     </data>
@@ -8,153 +9,172 @@
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/_44pxv"
         android:layout_width="match_parent" style="@style/groupStylewhite_A700">
-        <LinearLayout android:id="@+id/linearColumnuser"
-            android:layout_gravity="top|center"
+
+        <LinearLayout
+            android:id="@+id/linearColumnuser"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10pxv"
-            android:layout_marginEnd="@dimen/_26pxh"
+            android:layout_gravity="top|center"
             android:layout_marginStart="@dimen/_26pxh"
-            android:layout_width="match_parent" android:orientation="vertical">
+            android:layout_marginEnd="@dimen/_26pxh"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:orientation="vertical">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarToolbar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10pxh"
-                android:layout_width="match_parent" app:contentInsetStart="0dp">
-                <LinearLayout android:id="@+id/linearRowuser"
+                app:contentInsetStart="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearRowuser"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent" android:orientation="horizontal">
+                    android:orientation="horizontal">
+
                     <ImageButton
-                        android:background="@drawable/rectangle_bg_bluegray_50_radius_25"
                         android:id="@+id/btnUser"
-                        android:layout_height="@dimen/_50pxh"
                         android:layout_width="@dimen/_50pxh"
+                        android:layout_height="@dimen/_50pxh"
+                        android:background="@drawable/rectangle_bg_bluegray_50_radius_25"
                         android:paddingHorizontal="@dimen/_10pxh"
                         android:paddingVertical="@dimen/_10pxv"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/img_user" tools:ignore="ContentDescription"/>
-                    <TextView android:ellipsize="end"
+                        android:src="@drawable/img_user"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
                         android:id="@+id/txtHELLO"
+                        style="@style/txtInterregular14_1"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_29pxv"
                         android:layout_marginStart="@dimen/_3pxh"
                         android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_marginBottom="@dimen/_29pxv"
                         android:layout_weight="0.47"
-                        android:layout_width="0dp"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountGoalsVM.accountGoalsModel.txtHELLO}"
-                        style="@style/txtInterregular14_1" tools:text="@string/lbl_hello"/>
+                        tools:text="@string/lbl_hello" />
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
-            <FrameLayout android:id="@+id/frameStackgoals"
+
+            <FrameLayout
+                android:id="@+id/frameStackgoals"
+                android:layout_width="@dimen/_307pxh"
                 android:layout_height="@dimen/_546pxv"
-                android:layout_marginTop="@dimen/_47pxv" android:layout_width="@dimen/_307pxh">
-                <LinearLayout android:id="@+id/linearColumngoals"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_1pxh"
-                    android:layout_marginStart="@dimen/_1pxh"
+                android:layout_marginTop="@dimen/_47pxv">
+
+                <LinearLayout
+                    android:id="@+id/linearColumngoals"
+                    style="@style/groupStylebluegray_1"
                     android:layout_width="match_parent"
-                    android:orientation="vertical" style="@style/groupStylebluegray_1">
-                    <TextView android:ellipsize="end"
+                    android:layout_height="603dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_1pxh"
+                    android:layout_marginEnd="@dimen/_1pxh"
+                    android:orientation="vertical">
+
+                    <TextView
                         android:id="@+id/txtGoals"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/txtIntersemibold14_1"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_19pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountGoalsVM.accountGoalsModel.txtGoals}"
-                        style="@style/txtIntersemibold14_1" tools:text="@string/lbl_goals"/>
-                    <TextView android:ellipsize="end"
+                        tools:text="@string/lbl_goals" />
+
+                    <TextView
                         android:id="@+id/txtTargetWeight"
+                        style="@style/txtInterregular14"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_64pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountGoalsVM.accountGoalsModel.txtTargetWeight}"
-                        style="@style/txtInterregular14" tools:text="@string/lbl_target_weight"/>
-                    <LinearLayout android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnarrowdown"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
-                        android:layout_marginStart="@dimen/_27pxh"
-                        android:layout_marginTop="@dimen/_6pxv"
+                        tools:text="@string/lbl_target_weight" />
+
+                    <EditText
+                        android:id="@+id/etUsernametextb2"
+                        style="@style/etRoundedOutline"
                         android:layout_width="match_parent"
-                        android:orientation="vertical" style="@style/groupStylecornerRadius_1">
-                        <FrameLayout
-                            android:id="@+id/frameTagretweightd"
-                            android:layout_gravity="end"
-                            android:layout_height="@dimen/_48pxv"
-                            android:layout_marginStart="@dimen/_10pxh"
-                            android:layout_width="@dimen/_30pxh" style="@style/groupStylebluegray_2">
-                            <ImageView android:id="@+id/imageArrowdown"
-                                android:layout_gravity="center"
-                                android:layout_height="@dimen/_13pxh"
-                                android:layout_marginBottom="@dimen/_17pxv"
-                                android:layout_marginEnd="@dimen/_4pxh"
-                                android:layout_marginStart="@dimen/_4pxh"
-                                android:layout_marginTop="@dimen/_18pxv"
-                                android:layout_width="@dimen/_22pxh"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/img_arrowdown"
-                                tools:ignore="ContentDescription" tools:src="@drawable/img_arrowdown"/>
-                        </FrameLayout>
-                    </LinearLayout>
-                    <TextView android:ellipsize="end"
-                        android:id="@+id/txtTargetStepCou"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_27pxh"
+                        android:layout_marginTop="@dimen/_7pxv"
                         android:layout_marginEnd="@dimen/_27pxh"
+                        android:background="@drawable/rectangle_border_black_900_radius_6"
+                        android:ellipsize="end"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:text="@={accountAccInfoVM.accountAccInfoModel.etUsernametextbValue}"
+                        tools:ignore="Autofill" />
+
+                    <TextView
+                        android:id="@+id/txtTargetStepCou"
+                        style="@style/txtInterregular14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_29pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountGoalsVM.accountGoalsModel.txtTargetStepCou}"
-                        style="@style/txtInterregular14" tools:text="@string/msg_target_step_cou"/>
-                    <LinearLayout android:gravity="center_horizontal"
-                        android:id="@+id/linearColumnarrowdownOne"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_20pxv"
-                        android:layout_marginEnd="@dimen/_27pxh"
-                        android:layout_marginStart="@dimen/_27pxh"
-                        android:layout_marginTop="@dimen/_6pxv"
+                        tools:text="@string/msg_target_step_cou" />
+
+                    <EditText
+                        android:id="@+id/etUsernametextb3"
+                        style="@style/etRoundedOutline"
                         android:layout_width="match_parent"
-                        android:orientation="vertical" style="@style/groupStylecornerRadius_1">
-                        <FrameLayout
-                            android:id="@+id/frameTargetstepcou"
-                            android:layout_gravity="end"
-                            android:layout_height="@dimen/_48pxv"
-                            android:layout_marginStart="@dimen/_10pxh"
-                            android:layout_width="@dimen/_30pxh" style="@style/groupStylebluegray_2">
-                            <ImageView
-                                android:id="@+id/imageArrowdownOne"
-                                android:layout_gravity="center"
-                                android:layout_height="@dimen/_13pxh"
-                                android:layout_marginBottom="@dimen/_17pxv"
-                                android:layout_marginEnd="@dimen/_4pxh"
-                                android:layout_marginStart="@dimen/_4pxh"
-                                android:layout_marginTop="@dimen/_18pxv"
-                                android:layout_width="@dimen/_22pxh"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/img_arrowdown"
-                                tools:ignore="ContentDescription" tools:src="@drawable/img_arrowdown"/>
-                        </FrameLayout>
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_27pxh"
+                        android:layout_marginTop="@dimen/_7pxv"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:background="@drawable/rectangle_border_black_900_radius_6"
+                        android:ellipsize="end"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:text="@={accountAccInfoVM.accountAccInfoModel.etUsernametextbValue}"
+                        tools:ignore="Autofill" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="save" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="cancel" />
+
                 </LinearLayout>
-                <View android:background="@color/white_A700"
+
+                <View
                     android:id="@+id/lineLineThirty"
-                    android:layout_gravity="top|start"
+                    android:layout_width="@dimen/_307pxh"
                     android:layout_height="@dimen/_1pxv"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="@dimen/_56pxv"
                     android:layout_marginBottom="@dimen/_56pxv"
-                    android:layout_marginTop="@dimen/_56pxv" android:layout_width="@dimen/_307pxh"/>
+                    android:background="@color/white_A700" />
             </FrameLayout>
         </LinearLayout>
+
         <FrameLayout android:id="@+id/frameBottombar"
             android:layout_gravity="bottom|start"
             android:layout_height="wrap_content"

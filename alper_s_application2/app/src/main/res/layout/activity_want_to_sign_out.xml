@@ -8,64 +8,89 @@
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/_44pxv"
         android:layout_width="match_parent" style="@style/groupStylewhite_A700">
-        <LinearLayout android:id="@+id/linearColumnuser"
+
+        <LinearLayout
+            android:id="@+id/linearColumnuser"
+            android:layout_width="match_parent"
+            android:layout_height="554dp"
             android:layout_gravity="top|center"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10pxv"
-            android:layout_marginEnd="@dimen/_27pxh"
             android:layout_marginStart="@dimen/_27pxh"
-            android:layout_width="match_parent" android:orientation="vertical">
+            android:layout_marginEnd="@dimen/_27pxh"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:orientation="vertical">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarToolbar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10pxh"
-                android:layout_width="match_parent" app:contentInsetStart="0dp">
-                <LinearLayout android:id="@+id/linearRowuser"
+                app:contentInsetStart="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearRowuser"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent" android:orientation="horizontal">
+                    android:orientation="horizontal">
+
                     <ImageButton
-                        android:background="@drawable/rectangle_bg_bluegray_50_radius_25"
                         android:id="@+id/btnUser"
-                        android:layout_height="@dimen/_50pxh"
                         android:layout_width="@dimen/_50pxh"
+                        android:layout_height="@dimen/_50pxh"
+                        android:background="@drawable/rectangle_bg_bluegray_50_radius_25"
                         android:paddingHorizontal="@dimen/_10pxh"
                         android:paddingVertical="@dimen/_10pxv"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/img_user" tools:ignore="ContentDescription"/>
-                    <TextView android:ellipsize="end"
+                        android:src="@drawable/img_user"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
                         android:id="@+id/txtHELLO"
+                        style="@style/txtInterregular14_1"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_29pxv"
                         android:layout_marginStart="@dimen/_3pxh"
                         android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_marginBottom="@dimen/_29pxv"
                         android:layout_weight="0.47"
-                        android:layout_width="0dp"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{wantToSignOutVM.wantToSignOutModel.txtHELLO}"
-                        style="@style/txtInterregular14_1" tools:text="@string/lbl_hello"/>
+                        tools:text="@string/lbl_hello" />
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
-            <LinearLayout android:gravity="center_horizontal"
+
+            <LinearLayout
                 android:id="@+id/linearColumnconfirmation"
-                android:layout_height="wrap_content"
+                style="@style/groupStylebluegray_1"
+                android:layout_width="match_parent"
+                android:layout_height="405dp"
                 android:layout_marginStart="@dimen/_1pxh"
                 android:layout_marginTop="@dimen/_47pxv"
-                android:layout_width="match_parent"
-                android:orientation="vertical" style="@style/groupStylebluegray_1">
-                <TextView android:ellipsize="end"
-                    android:gravity="start"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
                     android:id="@+id/txtConfirmation"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/_20pxv"
-                    android:layout_marginEnd="@dimen/_33pxh"
+                    style="@style/txtIntersemibold14_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginStart="@dimen/_33pxh"
                     android:layout_marginTop="@dimen/_217pxv"
-                    android:layout_width="match_parent"
+                    android:layout_marginEnd="@dimen/_33pxh"
+                    android:layout_marginBottom="@dimen/_20pxv"
+                    android:ellipsize="end"
+                    android:gravity="start"
                     android:lineSpacingExtra="@dimen/_3pxh"
                     android:singleLine="true"
                     android:text="@{wantToSignOutVM.wantToSignOutModel.txtConfirmation}"
-                    style="@style/txtIntersemibold14_1" tools:text="@string/msg_are_you_sure_yo"/>
+                    tools:text="@string/msg_are_you_sure_yo" />
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign out" />
             </LinearLayout>
         </LinearLayout>
         <FrameLayout android:id="@+id/frameBottombar"
