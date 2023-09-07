@@ -49,35 +49,33 @@
             <FrameLayout android:id="@+id/frameStackusername"
                 android:layout_height="@dimen/_546pxv"
                 android:layout_marginTop="@dimen/_47pxv" android:layout_width="@dimen/_306pxh">
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtUsername"
-                    android:layout_gravity="top|start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_54pxv"
-                    android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_54pxv"
-                    android:layout_width="wrap_content"
-                    android:lineSpacingExtra="@dimen/_3pxh"
-                    android:singleLine="true"
-                    android:text="@{wantToDeleteAccVM.wantToDeleteAccModel.txtUsername}"
-                    style="@style/txtInterregular14_1" tools:text="@string/lbl_username"/>
+
                 <LinearLayout android:id="@+id/linearColumnconfirmation"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_1pxh"
                     android:layout_width="match_parent"
                     android:orientation="vertical" style="@style/groupStylebluegray_1">
-                    <TextView android:gravity="center_horizontal"
+
+                    <TextView
                         android:id="@+id/txtConfirmation"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/_20pxv"
-                        android:layout_marginEnd="@dimen/_34pxh"
+                        style="@style/txtIntersemibold14_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
                         android:layout_marginStart="@dimen/_34pxh"
                         android:layout_marginTop="@dimen/_198pxv"
-                        android:layout_width="match_parent"
+                        android:layout_marginEnd="@dimen/_34pxh"
+                        android:layout_marginBottom="@dimen/_20pxv"
+                        android:gravity="center_horizontal"
                         android:lineSpacingExtra="@dimen/_5pxh"
                         android:text="@{wantToDeleteAccVM.wantToDeleteAccModel.txtConfirmation}"
-                        style="@style/txtIntersemibold14_1" tools:text="@string/msg_are_you_sure_yo2"/>
+                        tools:text="@string/msg_are_you_sure_yo2" />
+
+                    <Button
+                        android:id="@+id/button10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="delete account" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

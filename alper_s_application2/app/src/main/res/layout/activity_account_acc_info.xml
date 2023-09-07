@@ -49,99 +49,131 @@
             <FrameLayout android:id="@+id/frameStackaccountinforma"
                 android:layout_height="@dimen/_546pxv"
                 android:layout_marginTop="@dimen/_47pxv" android:layout_width="@dimen/_307pxh">
+
                 <LinearLayout
                     android:id="@+id/linearColumnaccountinforma"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_1pxh"
-                    android:layout_marginStart="@dimen/_1pxh"
+                    style="@style/groupStylebluegray_1"
                     android:layout_width="match_parent"
-                    android:orientation="vertical" style="@style/groupStylebluegray_1">
-                    <TextView android:ellipsize="end"
+                    android:layout_height="595dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_1pxh"
+                    android:layout_marginEnd="@dimen/_1pxh"
+                    android:orientation="vertical">
+
+                    <TextView
                         android:id="@+id/txtAccountInforma"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/txtIntersemibold14_1"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_19pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountAccInfoVM.accountAccInfoModel.txtAccountInforma}"
-                        style="@style/txtIntersemibold14_1" tools:text="@string/msg_account_informa"/>
-                    <TextView android:ellipsize="end"
+                        tools:text="@string/msg_account_informa" />
+
+                    <TextView
                         android:id="@+id/txtUsername"
+                        style="@style/txtInterregular14"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_63pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountAccInfoVM.accountAccInfoModel.txtUsername}"
-                        style="@style/txtInterregular14" tools:text="@string/lbl_username"/>
+                        tools:text="@string/lbl_username" />
+
                     <EditText
-                        android:background="@drawable/rectangle_border_black_900_radius_6"
-                        android:ellipsize="end"
                         android:id="@+id/etUsernametextb"
-                        android:inputType="text"
+                        style="@style/etRoundedOutline"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_7pxv"
-                        android:layout_width="match_parent"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:background="@drawable/rectangle_border_black_900_radius_6"
+                        android:ellipsize="end"
+                        android:inputType="text"
                         android:singleLine="true"
                         android:text="@={accountAccInfoVM.accountAccInfoModel.etUsernametextbValue}"
-                        style="@style/etRoundedOutline" tools:ignore="Autofill"/>
-                    <TextView android:ellipsize="end"
+                        tools:ignore="Autofill" />
+
+                    <TextView
                         android:id="@+id/txtEmail"
+                        style="@style/txtInterregular14"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_28pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountAccInfoVM.accountAccInfoModel.txtEmail}"
-                        style="@style/txtInterregular14" tools:text="@string/lbl_e_mail2"/>
+                        tools:text="@string/lbl_e_mail2" />
+
                     <EditText
-                        android:background="@drawable/rectangle_border_black_900_radius_6"
-                        android:ellipsize="end"
                         android:id="@+id/etEmailtextbox"
-                        android:inputType="text"
+                        style="@style/etRoundedOutline"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_7pxv"
-                        android:layout_width="match_parent"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:background="@drawable/rectangle_border_black_900_radius_6"
+                        android:ellipsize="end"
+                        android:inputType="text"
                         android:singleLine="true"
                         android:text="@={accountAccInfoVM.accountAccInfoModel.etEmailtextboxValue}"
-                        style="@style/etRoundedOutline" tools:ignore="Autofill"/>
-                    <TextView android:ellipsize="end"
+                        tools:ignore="Autofill" />
+
+                    <TextView
                         android:id="@+id/txtPassword"
+                        style="@style/txtInterregular14"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_25pxv"
-                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_3pxh"
                         android:singleLine="true"
                         android:text="@{accountAccInfoVM.accountAccInfoModel.txtPassword}"
-                        style="@style/txtInterregular14" tools:text="@string/lbl_password"/>
+                        tools:text="@string/lbl_password" />
+
                     <EditText
-                        android:background="@drawable/rectangle_border_black_900_radius_6"
-                        android:ellipsize="end"
                         android:id="@+id/etPasswordtextb"
-                        android:inputType="text"
+                        style="@style/etRoundedOutline"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_20pxv"
-                        android:layout_marginEnd="@dimen/_27pxh"
                         android:layout_marginStart="@dimen/_27pxh"
                         android:layout_marginTop="@dimen/_8pxv"
-                        android:layout_width="match_parent"
+                        android:layout_marginEnd="@dimen/_27pxh"
+                        android:layout_marginBottom="@dimen/_20pxv"
+                        android:background="@drawable/rectangle_border_black_900_radius_6"
+                        android:ellipsize="end"
+                        android:inputType="text"
                         android:singleLine="true"
                         android:text="@={accountAccInfoVM.accountAccInfoModel.etPasswordtextbValue}"
-                        style="@style/etRoundedOutline" tools:ignore="Autofill"/>
+                        tools:ignore="Autofill" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="cancel" />
                 </LinearLayout>
                 <View android:background="@color/white_A700"
                     android:id="@+id/lineLineThirty"
