@@ -16,47 +16,27 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/usernameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="285dp"
         android:ems="10"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editTextDate2"
+        android:id="@+id/passwordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="337dp"
-        android:ems="10"
-        android:inputType="date" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="85dp"
-        android:layout_marginBottom="393dp"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="354dp"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -66,29 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="207dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="256dp"
         android:text="Username" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="246dp"
-        android:text="Date of birth" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="419dp"
-        android:layout_marginEnd="287dp"
-        android:text="E-mail" />
 
     <TextView
         android:id="@+id/textView9"
@@ -96,19 +56,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="523dp"
-        android:layout_marginEnd="264dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="251dp"
         android:text="Password" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="636dp"
-        android:layout_marginEnd="172dp"
+        android:layout_marginTop="693dp"
+        android:layout_marginEnd="157dp"
         android:text="Sign up" />
 
     <TextView
