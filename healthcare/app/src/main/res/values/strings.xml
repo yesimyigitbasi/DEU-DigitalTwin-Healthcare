@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">healthcare</string>
-    <string name="learn_your_body__string" />
-    <string name="let_s_start_building_a_healthy_life__string" />
-    <string name="create_an_account_string" />
-    <string name="already_have_an_account__string" />
-    <string name="sign_in__string" />
-</resources>
