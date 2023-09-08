@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="61dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginEnd="70dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
@@ -61,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="162dp"
         android:text="Account Information" />
 
     <TextView
@@ -71,8 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="218dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="190dp"
         android:text="Username" />
 
     <TextView
@@ -81,8 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="256dp"
         android:text="E-mail" />
 
     <TextView
@@ -92,7 +92,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="93dp"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="285dp"
         android:text="xyz@mail.com" />
 
     <TextView
@@ -102,7 +102,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="93dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="343dp"
         android:text="Personal Information" />
 
     <TextView
@@ -112,7 +112,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="380dp"
         android:text="Age" />
 
     <TextView
@@ -122,7 +122,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="423dp"
+        android:layout_marginBottom="467dp"
         android:text="Number" />
 
     <TextView
@@ -131,8 +131,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="392dp"
+        android:layout_marginStart="202dp"
+        android:layout_marginBottom="492dp"
         android:text="Gender" />
 
     <TextView
@@ -141,8 +141,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="359dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="464dp"
         android:text="Female" />
 
     <TextView
@@ -151,8 +151,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginBottom="325dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginBottom="431dp"
         android:text="Height" />
 
     <TextView
@@ -162,7 +163,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="91dp"
-        android:layout_marginBottom="294dp"
+        android:layout_marginBottom="406dp"
         android:text="cm" />
 
     <TextView
@@ -172,7 +173,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="262dp"
+        android:layout_marginBottom="350dp"
         android:text="Goals" />
 
     <TextView
@@ -182,7 +183,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="230dp"
+        android:layout_marginBottom="318dp"
         android:text="Target Weight" />
 
     <TextView
@@ -191,8 +192,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginBottom="202dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginBottom="288dp"
         android:text="kg" />
 
     <TextView
@@ -202,7 +203,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="173dp"
+        android:layout_marginBottom="257dp"
         android:text="Target Step Count" />
 
     <TextView
@@ -211,8 +212,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="142dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="225dp"
         android:text="Steps" />
 
     <ImageView
@@ -233,8 +234,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="605dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="513dp"
+        android:layout_marginEnd="81dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageView
@@ -243,7 +244,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="342dp"
         android:layout_marginEnd="70dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
@@ -264,8 +265,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="255dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="221dp"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginBottom="145dp"
+        android:text="Sign Out" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="95dp"
+        android:text="Delete Account" />
 
 </RelativeLayout>

@@ -59,14 +59,6 @@
                 android:gravity="center_horizontal"
                 android:text="Weight" />
 
-            <TextView
-                android:id="@+id/textView43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="177dp"
-                android:layout_marginTop="10dp"
-                android:text="HELLO" />
-
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/idGraphView"
                 android:layout_width="match_parent"
@@ -105,6 +97,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
         android:text="Name" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="10dp"
+        android:text="HELLO" />
 
 
 </RelativeLayout>
