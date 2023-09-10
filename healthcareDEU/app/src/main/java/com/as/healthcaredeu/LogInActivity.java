@@ -37,7 +37,7 @@ public class loginActivity extends AppCompatActivity {
                 String accUsername = (usernameLogin.getText().toString());
 
                 String accPassword = (passwordLogin.getText().toString());
-
+                //deneme
                 MyVolleyRequest.getRequest(getApplicationContext(), url, new MyVolleyRequest.VolleyCallback() {
                     @Override
                     public void onSuccess(String result) {
