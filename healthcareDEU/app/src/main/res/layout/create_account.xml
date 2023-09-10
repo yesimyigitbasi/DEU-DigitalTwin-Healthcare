@@ -4,17 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="40dp"
-        android:clickable="true"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-
     <EditText
         android:id="@+id/usernameText"
         android:layout_width="wrap_content"
@@ -34,9 +23,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginEnd="105dp"
-        android:layout_marginBottom="354dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="420dp"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -56,8 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="440dp"
-        android:layout_marginEnd="251dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="255dp"
         android:text="Password" />
 
     <Button
@@ -67,8 +57,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="693dp"
-        android:layout_marginEnd="157dp"
+        android:layout_marginTop="681dp"
+        android:layout_marginEnd="175dp"
         android:text="Sign up" />
 
     <TextView
