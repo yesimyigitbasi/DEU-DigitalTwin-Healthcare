@@ -11,11 +11,14 @@ import org.json.JSONObject;
 
 
 public class CreateAccountActivity extends AppCompatActivity {
-    private String url = "http://20.62.111.133:80/api/createacc";//****Put your  URL here******
+    private static String url = "http://20.62.111.133:80/api/createacc";//****Put your  URL here******
     private String POST = "POST";
     private String GET = "GET";
     Button signUp;
+
     EditText usernameText;
+
+
     EditText passwordtext;
 
     @SuppressLint("MissingInflatedId")
@@ -34,6 +37,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 String accUsername = (usernameText.getText().toString());
 
                 String accPassword = (passwordtext.getText().toString());
+
 
                 Account newAccount = new Account(accUsername, accPassword);
 
@@ -57,9 +61,15 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                     }
                 });
+
+
             }
         });
+
+
     }
+
+
 }
 
 

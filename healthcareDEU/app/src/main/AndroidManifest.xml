@@ -25,6 +25,10 @@
         <activity
             android:name=".CreateAccountActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".loginActivity"
+            android:screenOrientation="portrait" />
+
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="158dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="61dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
@@ -34,14 +34,25 @@
         android:layout_marginTop="97dp"
         android:text="Name" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="80dp"
+        android:tint="#000000"
+        app:srcCompat="@android:drawable/stat_sys_data_bluetooth" />
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="162dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="180dp"
         android:text="Account Information" />
 
     <TextView
@@ -50,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="218dp"
         android:text="Username" />
 
     <TextView
@@ -60,8 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="308dp"
         android:text="E-mail" />
 
     <TextView
@@ -71,7 +82,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="93dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="344dp"
         android:text="xyz@mail.com" />
 
     <TextView
@@ -81,7 +92,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="93dp"
-        android:layout_marginTop="343dp"
+        android:layout_marginTop="384dp"
         android:text="Personal Information" />
 
     <TextView
@@ -91,7 +102,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="420dp"
         android:text="Age" />
 
     <TextView
@@ -101,7 +112,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="467dp"
+        android:layout_marginBottom="423dp"
         android:text="Number" />
 
     <TextView
@@ -110,8 +121,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="202dp"
-        android:layout_marginBottom="492dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="392dp"
         android:text="Gender" />
 
     <TextView
@@ -120,8 +131,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="204dp"
-        android:layout_marginBottom="464dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="359dp"
         android:text="Female" />
 
     <TextView
@@ -130,9 +141,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginBottom="431dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginBottom="325dp"
         android:text="Height" />
 
     <TextView
@@ -142,7 +152,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="91dp"
-        android:layout_marginBottom="406dp"
+        android:layout_marginBottom="294dp"
         android:text="cm" />
 
     <TextView
@@ -152,7 +162,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginBottom="262dp"
         android:text="Goals" />
 
     <TextView
@@ -162,7 +172,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="318dp"
+        android:layout_marginBottom="230dp"
         android:text="Target Weight" />
 
     <TextView
@@ -171,8 +181,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginBottom="202dp"
         android:text="kg" />
 
     <TextView
@@ -182,7 +192,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="92dp"
-        android:layout_marginBottom="257dp"
+        android:layout_marginBottom="173dp"
         android:text="Target Step Count" />
 
     <TextView
@@ -191,8 +201,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="225dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginBottom="142dp"
         android:text="Steps" />
 
     <ImageView
@@ -213,8 +223,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="513dp"
-        android:layout_marginEnd="81dp"
+        android:layout_marginTop="605dp"
+        android:layout_marginEnd="72dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageView
@@ -223,7 +233,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="342dp"
+        android:layout_marginTop="376dp"
         android:layout_marginEnd="70dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
@@ -255,47 +265,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="221dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="255dp"
         android:text="TextView" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="131dp"
-        android:layout_marginBottom="145dp"
-        android:text="Sign Out" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="95dp"
-        android:text="Delete Account" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="43dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="68dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="79dp"
-        app:srcCompat="@android:drawable/stat_sys_data_bluetooth" />
 
 </RelativeLayout>

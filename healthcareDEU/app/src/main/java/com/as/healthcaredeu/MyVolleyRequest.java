@@ -29,6 +29,27 @@ public class MyVolleyRequest {
 
         requestQueue.add(jsonObjectRequest);
     }
+    public static void getRequest(Context context, String url, final VolleyCallback callback) {
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        callback.onSuccess(response.toString());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        callback.onError(error.toString());
+                    }
+                });
+
+        requestQueue.add(jsonObjectRequest);
+    }
+
+
 
     public interface VolleyCallback {
         void onSuccess(String result);
