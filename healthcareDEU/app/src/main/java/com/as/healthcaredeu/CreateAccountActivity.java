@@ -15,10 +15,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private String POST = "POST";
     private String GET = "GET";
     Button signUp;
-
     EditText usernameText;
-
-
     EditText passwordtext;
 
     @SuppressLint("MissingInflatedId")
@@ -37,7 +34,6 @@ public class CreateAccountActivity extends AppCompatActivity {
                 String accUsername = (usernameText.getText().toString());
 
                 String accPassword = (passwordtext.getText().toString());
-
 
                 Account newAccount = new Account(accUsername, accPassword);
 
@@ -61,15 +57,9 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                     }
                 });
-
-
             }
         });
-
-
     }
-
-
 }
 
 
