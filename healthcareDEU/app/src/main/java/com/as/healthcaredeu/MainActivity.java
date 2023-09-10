@@ -11,13 +11,18 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button homeScreenCreateButton;
-    Button signUp;
+    Button signInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
+
         homeScreenCreateButton = findViewById(R.id.createAccButton);
+
+        signInButton = findViewById(R.id.signInBttn);
+
         homeScreenCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,8 +31,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
-
 
 }
