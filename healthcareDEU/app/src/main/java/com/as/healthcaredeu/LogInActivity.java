@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LogInActivity extends AppCompatActivity {
+public class loginActivity extends AppCompatActivity {
 
     EditText usernameLogin;
     EditText passwordLogin;
