@@ -30,6 +30,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         usernameText = findViewById(R.id.usernameText);
         passwordtext = findViewById(R.id.passwordText);
 
+
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

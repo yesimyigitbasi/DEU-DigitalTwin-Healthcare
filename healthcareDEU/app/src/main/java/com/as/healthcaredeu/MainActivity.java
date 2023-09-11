@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,5 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
+
+
 }
