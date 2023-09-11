@@ -43,16 +43,6 @@
         android:layout_marginTop="329dp"
         android:text="Gender" />
 
-    <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="367dp"
-        android:ems="10"
-        android:inputType="text" />
-
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
@@ -72,5 +62,16 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="350dp"
         android:text="Save" />
+
+    <Spinner
+        android:id="@+id/spinnerGender"
+        android:layout_width="212dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="484dp" />
 
 </RelativeLayout>
