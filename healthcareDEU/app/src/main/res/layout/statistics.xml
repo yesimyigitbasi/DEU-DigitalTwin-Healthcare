@@ -23,8 +23,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="16dp"
-        android:tint="#0C0C0C"
-        app:srcCompat="@android:drawable/ic_menu_myplaces" />
+        app:srcCompat="@android:drawable/ic_menu_myplaces"
+        app:tint="#0C0C0C" />
 
 
     <ImageView
