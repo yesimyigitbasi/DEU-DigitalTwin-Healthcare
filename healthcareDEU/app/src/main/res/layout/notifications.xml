@@ -4,58 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A448B5E6"
+    android:backgroundTint="#A448B5E6"
     tools:ignore="ExtraText">
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-19dp"
+        app:backgroundTint="#C939A1CF" />
+
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/statisticsButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="315dp"
+        android:layout_marginBottom="13dp"
+        app:srcCompat="@android:drawable/btn_star" />
+
+    <ImageView
+        android:id="@+id/settingsButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="12dp"
         app:srcCompat="@android:drawable/ic_menu_myplaces"
         app:tint="#0C0C0C" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/notificationButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_alignParentTop="true"
-
         android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="847dp"
-        android:layout_marginEnd="186dp"
-        app:srcCompat="@android:drawable/ic_popup_reminder"
-        app:tint="#000000" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="17dp"
-        app:srcCompat="@android:drawable/btn_star" />
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="12dp"
+        app:srcCompat="@android:drawable/ic_popup_reminder" />
 
-
-    <ScrollView
-        android:layout_width="372dp"
-        android:layout_height="625dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="161dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
     <TextView
         android:id="@+id/textView12"
