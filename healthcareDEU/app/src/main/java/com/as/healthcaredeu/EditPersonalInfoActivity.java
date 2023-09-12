@@ -1,5 +1,6 @@
 package com.as.healthcaredeu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -28,6 +29,15 @@ public class EditPersonalInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+            }
+        });
+
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditPersonalInfoActivity.this,SettingsActivity.class);
+                startActivity(intent);
             }
         });
     }

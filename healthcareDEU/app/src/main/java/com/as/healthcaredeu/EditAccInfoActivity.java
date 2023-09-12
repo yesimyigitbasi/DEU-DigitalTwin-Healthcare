@@ -1,5 +1,6 @@
 package com.as.healthcaredeu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,15 @@ public class EditAccInfoActivity extends AppCompatActivity {
                 String newAccUsername = (editUsername.getText().toString());
                 String newAccEmail = (editEmail.getText().toString());
                 String newAccPassword = (editPassword.getText().toString());
+            }
+        });
+
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditAccInfoActivity.this,SettingsActivity.class);
+                startActivity(intent);
             }
         });
     }
