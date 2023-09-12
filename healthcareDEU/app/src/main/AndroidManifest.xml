@@ -37,6 +37,15 @@
         <activity
             android:name=".NotificationActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditPersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditAccInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditGoalsActivity"
+            android:screenOrientation="portrait" />
 
 
 

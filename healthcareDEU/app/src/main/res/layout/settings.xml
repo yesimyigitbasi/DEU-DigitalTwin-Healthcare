@@ -2,7 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#A448B5E6"
+    android:backgroundTint="#A448B5E6">
+
+    <ImageView
+        android:id="@+id/editgoalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="321dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
         android:id="@+id/textView13"
@@ -51,8 +63,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="273dp"
         android:text="E-mail" />
 
     <TextView
@@ -62,7 +74,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="98dp"
-        android:layout_marginTop="283dp"
+        android:layout_marginTop="295dp"
         android:text="xyz@mail.com" />
 
     <TextView
@@ -188,39 +200,45 @@
         android:layout_marginBottom="257dp"
         android:text="Steps" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="843dp"
-        android:layout_marginEnd="191dp"
-        app:srcCompat="@android:drawable/ic_popup_reminder"
-        app:tint="#000000" />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-19dp"
+        app:backgroundTint="#C939A1CF" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/statisticsButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="315dp"
+        android:layout_marginBottom="13dp"
+        app:srcCompat="@android:drawable/btn_star" />
+
+    <ImageView
+        android:id="@+id/settingsButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="12dp"
         app:srcCompat="@android:drawable/ic_menu_myplaces"
         app:tint="#0C0C0C" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/notificationButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginBottom="20dp"
-        app:srcCompat="?attr/actionModePasteDrawable"
-        app:tint="#000000" />
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="12dp"
+        app:srcCompat="@android:drawable/ic_popup_reminder" />
 
     <TextView
         android:id="@+id/textView17"
@@ -252,34 +270,24 @@
         android:layout_marginBottom="100dp"
         android:text="Delete Account" />
 
-    <Button
-        android:id="@+id/accInfoEdit"
-        android:layout_width="76dp"
-        android:layout_height="38dp"
-        android:layout_alignParentTop="true"
+    <ImageView
+        android:id="@+id/editaccButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="171dp"
-        android:layout_marginEnd="45dp"
-        android:text="Edit" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="613dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
-    <Button
-        android:id="@+id/personalInfoEdit"
-        android:layout_width="76dp"
-        android:layout_height="38dp"
-        android:layout_alignParentTop="true"
+    <ImageView
+        android:id="@+id/editpersonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="340dp"
-        android:layout_marginEnd="45dp"
-        android:text="Edit" />
-
-    <Button
-        android:id="@+id/goalsEdit"
-        android:layout_width="76dp"
-        android:layout_height="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="493dp"
-        android:layout_marginEnd="44dp"
-        android:text="Edit" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="461dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
 </RelativeLayout>
