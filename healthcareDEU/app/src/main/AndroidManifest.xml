@@ -31,6 +31,14 @@
         <activity
             android:name=".GraphActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NotificationActivity"
+            android:screenOrientation="portrait" />
+
+
 
 
     </application>

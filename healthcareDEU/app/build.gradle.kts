@@ -33,6 +33,7 @@ android {
 
 dependencies {
     implementation ("com.android.volley:volley:1.2.1") // Use the latest version
+   // implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0") // Use the latest version
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
