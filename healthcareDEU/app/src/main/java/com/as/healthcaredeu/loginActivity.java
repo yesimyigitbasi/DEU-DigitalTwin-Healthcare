@@ -1,6 +1,7 @@
 package com.as.healthcaredeu;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,8 +38,11 @@ public class loginActivity extends AppCompatActivity {
                 String accUsername = (usernameLogin.getText().toString());
 
                 String accPassword = (passwordLogin.getText().toString());
-                //deneme
-                MyVolleyRequest.getRequest(getApplicationContext(), url, new MyVolleyRequest.VolleyCallback() {
+                //if(accUsername == "alper" && accPassword == "123"){
+                    Intent intent = new Intent(loginActivity.this,GraphActivity.class);
+                    startActivity(intent);
+               // }
+/*                MyVolleyRequest.getRequest(getApplicationContext(), url, new MyVolleyRequest.VolleyCallback() {
                     @Override
                     public void onSuccess(String result) {
                         // Handle a successful response here
@@ -51,7 +55,7 @@ public class loginActivity extends AppCompatActivity {
                         // For example, display an error message to the user
                         Toast.makeText(getApplicationContext(), "Error: " + error, Toast.LENGTH_SHORT).show();
                     }
-                });
+                });*/
 
 
 

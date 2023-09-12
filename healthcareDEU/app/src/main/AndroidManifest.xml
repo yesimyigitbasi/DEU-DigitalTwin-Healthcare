@@ -28,6 +28,10 @@
         <activity
             android:name=".loginActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".GraphActivity"
+            android:screenOrientation="portrait" />
+
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
