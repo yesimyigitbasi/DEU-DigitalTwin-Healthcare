@@ -8,6 +8,8 @@
     android:backgroundTint="#A448B5E6">
 
 
+
+
     <TextView
         android:id="@+id/textView44"
         android:layout_width="wrap_content"
@@ -16,6 +18,33 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
         android:text="Name" />
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/StepBarChart"
+        android:layout_width="wrap_content"
+        android:layout_height="246dp"
+        android:layout_alignTop="@+id/textView43"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="403dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="232dp" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/weightGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="246dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="539dp"
+        />
 
     <TextView
         android:id="@+id/textView43"
@@ -47,10 +76,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="324dp"
-        android:layout_marginEnd="332dp"
-        android:layout_marginBottom="388dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="391dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="321dp"
         android:text="Steps" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
@@ -101,10 +130,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="525dp"
-        android:layout_marginEnd="332dp"
-        android:layout_marginBottom="187dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="665dp"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="47dp"
         android:text="BMI" />
 
 
