@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="321dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="268dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginStart="194dp"
+        android:layout_marginTop="25dp"
         android:text="HELLO" />
 
     <TextView
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="97dp"
+        android:layout_marginStart="195dp"
+        android:layout_marginTop="56dp"
         android:text="Name" />
 
     <TextView
@@ -42,39 +42,38 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="112dp"
         android:text="Account Information" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="210dp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="11dp"
         android:text="Username" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="273dp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="71dp"
         android:text="E-mail" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="295dp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="101dp"
         android:text="xyz@mail.com" />
 
     <TextView
@@ -83,121 +82,50 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="351dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="309dp"
         android:text="Personal Information" />
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="383dp"
+        android:layout_below="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="14dp"
         android:text="Age" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginBottom="471dp"
-        android:text="Number" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="439dp"
-        android:text="Gender" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginBottom="420dp"
-        android:text="Female" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="215dp"
-        android:layout_marginBottom="489dp"
-        android:text="Height" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="217dp"
-        android:layout_marginBottom="469dp"
-        android:text="cm" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginBottom="363dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="497dp"
+        android:layout_marginEnd="325dp"
         android:text="Goals" />
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="329dp"
-        android:text="Target Weight" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="89dp"
-        android:layout_marginBottom="308dp"
-        android:text="kg" />
 
     <TextView
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginBottom="276dp"
+        android:layout_below="@+id/textView28"
+        android:layout_alignStart="@+id/textView28"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="54dp"
         android:text="Target Step Count" />
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginBottom="257dp"
+        android:layout_below="@+id/textView28"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="54dp"
+        android:layout_toEndOf="@+id/textView29"
         android:text="Steps" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
@@ -244,40 +172,46 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="229dp"
+        android:layout_below="@+id/textView16"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="11dp"
         android:text="TextView" />
 
     <Button
         android:id="@+id/signOutBtn"
-        android:layout_width="184dp"
+        android:layout_width="151dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="163dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="73dp"
         android:text="Sign Out" />
 
     <Button
         android:id="@+id/deleteAccBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="119dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="73dp"
         android:text="Delete Account" />
 
     <ImageView
         android:id="@+id/editaccButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="613dp"
+        android:layout_marginStart="342dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="643dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageView
@@ -286,8 +220,78 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="461dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="460dp"
         app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView28"
+        android:layout_alignStart="@+id/textView28"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView22"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="10dp"
+        android:text="21" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="15dp"
+        android:text="Height" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_marginStart="163dp"
+        android:layout_marginBottom="-63dp"
+        android:text="193" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="-95dp"
+        android:text="Gender" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="103dp"
+        android:text="Female" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView28"
+        android:layout_alignStart="@+id/textView28"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="15dp"
+        android:text="kg" />
 
 </RelativeLayout>
