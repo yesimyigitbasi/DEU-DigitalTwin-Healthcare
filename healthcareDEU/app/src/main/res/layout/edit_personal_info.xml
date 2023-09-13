@@ -19,9 +19,25 @@
         android:id="@+id/editTextAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextAge2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView36"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="245dp"
+        android:layout_marginEnd="101dp"
         android:ems="10"
         android:inputType="number" />
 
@@ -35,16 +51,6 @@
         android:layout_marginTop="212dp"
         android:text="Age" />
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="329dp"
-        android:text="Gender" />
-
     <Button
         android:id="@+id/cancelBtn"
         android:layout_width="wrap_content"
@@ -52,7 +58,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="81dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginBottom="128dp"
         android:text="Cancel" />
 
     <Button
@@ -61,19 +67,45 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="128dp"
         android:text="Save" />
 
     <Spinner
         android:id="@+id/spinnerGender"
         android:layout_width="212dp"
         android:layout_height="42dp"
+        android:layout_below="@+id/textView36"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="377dp" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="347dp"
+        android:layout_height="276dp"
+        android:layout_below="@+id/textView36"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="101dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="484dp" />
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="335dp"
+        android:layout_marginEnd="-36dp"
+        android:layout_marginBottom="129dp"
+        android:text="Gender" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="279dp"
+        android:layout_height="297dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="254dp"
+        android:text="Height" />
 
 </RelativeLayout>

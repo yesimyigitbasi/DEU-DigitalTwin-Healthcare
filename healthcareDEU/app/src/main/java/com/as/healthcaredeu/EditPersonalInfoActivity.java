@@ -1,5 +1,7 @@
 package com.as.healthcaredeu;
 
+import static com.as.healthcaredeu.loginActivity.usernameOfAccount;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +12,12 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class EditPersonalInfoActivity extends AppCompatActivity {
     EditText editAge;
+
     Spinner genderDropdown;
     Button save;
     Button cancel;
@@ -28,7 +34,18 @@ public class EditPersonalInfoActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String age = editAge.getText().toString();
+               // String height =
 
+/*                JSONObject requestData = new JSONObject();
+                try {
+                    requestData.put("username",usernameOfAccount);
+                    requestData.put("name", newAccUsername);
+                    requestData.put("password", newAccPassword);
+                    requestData.put("email",newAccEmail);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }*/
             }
         });
 

@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class loginActivity extends AppCompatActivity {
     private static String loginUrl = "http://20.62.111.133:80/api/login";
-
+    public static String usernameOfAccount;
     Button loginButton;
     EditText usernameText;
     EditText passwordText;
@@ -45,7 +45,7 @@ public class loginActivity extends AppCompatActivity {
                         // Handle successful login, e.g., store user session or navigate to HomeScreenActivity
                         Intent intent = new Intent(loginActivity.this, GraphActivity.class);
                         startActivity(intent);
-                    }
+                        usernameOfAccount = usernameText.getText().toString();                    }
 
                     @Override
                     public void onError(String error) {
