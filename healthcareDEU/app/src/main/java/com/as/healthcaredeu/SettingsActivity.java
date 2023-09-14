@@ -6,11 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    TextView displayUsername;
+    TextView displayPassword;
+    TextView displayAge;
+    TextView displayHeight;
+    TextView displayGender;
+    TextView displayTargetWeight;
+    TextView displayTargetStep;
     ImageView statisticsButton;
     ImageView notificationButton;
     ImageView settingsButton;
@@ -26,11 +34,21 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
+
+        displayUsername = findViewById(R.id.textViewUsername);
+        displayPassword = findViewById(R.id.textViewEmail);
+        displayAge = findViewById(R.id.textViewAge);
+        displayHeight = findViewById(R.id.textViewHeight);
+        displayGender = findViewById(R.id.textViewGender);
+        displayTargetStep = findViewById(R.id.textViewTargetStep);
+        displayTargetWeight = findViewById(R.id.textViewTargetWeight);
+
         accInfo = findViewById(R.id.editaccButton);
         persInfo = findViewById(R.id.editpersonButton);
         goals = findViewById(R.id.editgoalButton);
         signOut = findViewById(R.id.signOutBtn);
         deleteAcc = findViewById(R.id.deleteAccBtn);
+
         statisticsButton = findViewById(R.id.statisticsButton2);
         notificationButton = findViewById(R.id.notificationButton2);
         settingsButton = findViewById(R.id.settingsButton2);
@@ -101,7 +119,5 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

@@ -67,7 +67,7 @@
         android:text="E-mail" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView15"
@@ -119,7 +119,7 @@
         android:text="Target Step Count" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/textViewTargetStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView28"
@@ -169,7 +169,7 @@
         app:srcCompat="@android:drawable/ic_popup_reminder" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textViewUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView16"
@@ -232,10 +232,10 @@
         android:layout_alignStart="@+id/textView28"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="TextView" />
+        android:text="Target Weight" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/textViewAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView22"
@@ -255,7 +255,7 @@
         android:text="Height" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/textViewHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView21"
@@ -275,7 +275,7 @@
         android:text="Gender" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/textViewGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView21"
@@ -285,7 +285,7 @@
         android:text="Female" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/textViewTargetWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView28"
