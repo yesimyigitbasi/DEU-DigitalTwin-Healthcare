@@ -1,6 +1,9 @@
 package com.as.healthcaredeu;
 
+import static com.as.healthcaredeu.loginActivity.usernameOfAccount;
+
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +11,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -27,6 +34,8 @@ public class SettingsActivity extends AppCompatActivity {
     ImageView goals;
     Button signOut;
     Button deleteAcc;
+    String url = "http://20.62.111.133:80/api/deleteacc";
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -83,8 +92,49 @@ public class SettingsActivity extends AppCompatActivity {
         deleteAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, DeleteAccActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SettingsActivity.this);
+                alertDialogBuilder.setTitle("IMPORTANT!");
+                alertDialogBuilder.setMessage("Are you sure you want to delete your account?");
+                alertDialogBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+
+                        JSONObject requestData = new JSONObject();
+                        try {
+                            requestData.put("username",usernameOfAccount);
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                        MyVolleyRequest.postRequest(getApplicationContext(), url, requestData, new MyVolleyRequest.VolleyCallback() {
+                            @Override
+                            public void onSuccess(String result) {
+                                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+
+                            @Override
+                            public void onError(String error) {
+
+
+                            }
+                        });
+                        dialog.dismiss();
+                    }
+                });
+
+                alertDialogBuilder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // You can add code here to handle the Cancel button click
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
             }
         });
 
