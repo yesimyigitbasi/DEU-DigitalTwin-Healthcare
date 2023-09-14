@@ -44,7 +44,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="232dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="number|numberSigned" />
 
     <EditText
         android:id="@+id/editTextStepCount"
@@ -52,10 +52,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="81dp"
-        android:layout_marginTop="347dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="344dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="number|numberSigned" />
 
     <Button
         android:id="@+id/goalsCancelButton"

@@ -49,8 +49,8 @@ public class EditAccInfoActivity extends AppCompatActivity {
                 MyVolleyRequest.postRequest(getApplicationContext(), url, requestData, new MyVolleyRequest.VolleyCallback() {
                     @Override
                     public void onSuccess(String result) {
-                       // Intent intent = new Intent(EditAccInfoActivity.this,SettingsActivity.class);
-                       // startActivity(intent);
+                        Intent intent = new Intent(EditAccInfoActivity.this,SettingsActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
