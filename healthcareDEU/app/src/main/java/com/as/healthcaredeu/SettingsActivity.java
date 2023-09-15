@@ -14,6 +14,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,6 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
     Button signOut;
     Button deleteAcc;
     String url = "http://20.62.111.133:80/api/deleteacc";
+    String infourl = "http://20.62.111.133:80/api/getdata/";
 
 
 
@@ -61,6 +67,24 @@ public class SettingsActivity extends AppCompatActivity {
         statisticsButton = findViewById(R.id.statisticsButton2);
         notificationButton = findViewById(R.id.notificationButton2);
         settingsButton = findViewById(R.id.settingsButton2);
+
+
+        sendRequest();
+
+
+        MyVolleyRequest.getRequest(getApplicationContext(), infourl + usernameOfAccount, new MyVolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(String result) {
+                displayAge.setText("32");
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+
+
         accInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,5 +193,26 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
+    public void sendRequest(){
+        JsonObjectRequest jsonObjectRequest= new JsonObjectRequest(Request.Method.GET, infourl + usernameOfAccount, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    String age =response.getString("age");
+                    displayAge.setText(age);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+    }
+
 }
