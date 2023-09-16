@@ -3,10 +3,12 @@ package com.as.healthcaredeu;
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,7 @@ public class GraphActivity extends AppCompatActivity {
 
     LineChart weightGraph;
     BarChart stepsBar;
+    TextView displayName;
 
 
     BarDataSet weightGraphDataSet,stepsGraphDataSet;
@@ -50,8 +53,11 @@ public class GraphActivity extends AppCompatActivity {
         weightGraph = findViewById(R.id.weightGraph);
         stepsBar = findViewById(R.id.StepBarChart);
 
-
-
+        // Retrieve the username from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
+        displayName = findViewById(R.id.textViewName);
+        displayName.setText("Welcome, " + username);
 
         ArrayList<Entry> entries = new ArrayList<>();
         entries.add(new Entry(1, 60));

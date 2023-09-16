@@ -1,17 +1,14 @@
 package com.as.healthcaredeu;
 
-import static com.as.healthcaredeu.loginActivity.usernameOfAccount;
-
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
@@ -19,8 +16,9 @@ import org.json.JSONObject;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    TextView displayName;
     TextView displayUsername;
-    TextView displayPassword;
+    TextView displayEmail;
     TextView displayAge;
     TextView displayHeight;
     TextView displayGender;
@@ -34,8 +32,6 @@ public class SettingsActivity extends AppCompatActivity {
     ImageView goals;
     Button signOut;
     Button deleteAcc;
-    String url = "http://20.62.111.133:80/api/deleteacc";
-
 
 
     @SuppressLint("MissingInflatedId")
@@ -44,8 +40,14 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
+        displayName = findViewById(R.id.textViewName);
+        displayName.setText("Welcome, " + username);
+
         displayUsername = findViewById(R.id.textViewUsername);
-        displayPassword = findViewById(R.id.textViewEmail);
+        displayUsername.setText(username);
+
         displayAge = findViewById(R.id.textViewAge);
         displayHeight = findViewById(R.id.textViewHeight);
         displayGender = findViewById(R.id.textViewGender);
@@ -61,6 +63,9 @@ public class SettingsActivity extends AppCompatActivity {
         statisticsButton = findViewById(R.id.statisticsButton2);
         notificationButton = findViewById(R.id.notificationButton2);
         settingsButton = findViewById(R.id.settingsButton2);
+
+
+
         accInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,49 +97,8 @@ public class SettingsActivity extends AppCompatActivity {
         deleteAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SettingsActivity.this);
-                alertDialogBuilder.setTitle("IMPORTANT!");
-                alertDialogBuilder.setMessage("Are you sure you want to delete your account?");
-                alertDialogBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-
-
-                        JSONObject requestData = new JSONObject();
-                        try {
-                            requestData.put("username",usernameOfAccount);
-                        } catch (JSONException e) {
-                            throw new RuntimeException(e);
-                        }
-
-                        MyVolleyRequest.postRequest(getApplicationContext(), url, requestData, new MyVolleyRequest.VolleyCallback() {
-                            @Override
-                            public void onSuccess(String result) {
-                                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
-                                startActivity(intent);
-                            }
-
-                            @Override
-                            public void onError(String error) {
-
-
-                            }
-                        });
-                        dialog.dismiss();
-                    }
-                });
-
-                alertDialogBuilder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // You can add code here to handle the Cancel button click
-                        dialog.dismiss();
-                    }
-                });
-
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
+                Intent intent = new Intent(SettingsActivity.this, DeleteAccActivity.class);
+                startActivity(intent);
             }
         });
 

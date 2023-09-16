@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -45,14 +45,6 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="539dp"
         />
-
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="10dp"
-        android:text="HELLO" />
 
     <TextView
         android:id="@+id/textView40"
