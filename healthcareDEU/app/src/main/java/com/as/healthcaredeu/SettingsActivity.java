@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    private static String getEmailUrl = "http://20.62.111.133:80/api/get_email"; // Update with your API endpoint
+
 
     TextView displayName;
     TextView displayUsername;
@@ -44,6 +48,9 @@ public class SettingsActivity extends AppCompatActivity {
         String username = sharedPreferences.getString("username", "");
         displayName = findViewById(R.id.textViewName);
         displayName.setText("Welcome, " + username);
+
+        // Fetch the email corresponding to the username
+        fetchEmail(username);
 
         displayUsername = findViewById(R.id.textViewUsername);
         displayUsername.setText(username);
@@ -134,4 +141,36 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void fetchEmail(final String username) {
+        JSONObject requestData = new JSONObject();
+        try {
+            requestData.put("username", username);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        MyVolleyRequest.postRequest(getApplicationContext(), getEmailUrl, requestData, new MyVolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String email = response.getString("email");
+
+                    // Display the email on the "Settings" page
+                    TextView emailTextView = findViewById(R.id.textViewEmail);
+                    emailTextView.setText("Email: " + email);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(String error) {
+                // Handle error when fetching email
+                Toast.makeText(SettingsActivity.this, "Error fetching email", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
