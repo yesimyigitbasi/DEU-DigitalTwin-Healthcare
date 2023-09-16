@@ -18,16 +18,11 @@ import org.json.JSONObject;
 public class SettingsActivity extends AppCompatActivity {
 
     private static String getEmailUrl = "http://20.62.111.133:80/api/get_email"; // Update with your API endpoint
+    private static String getUserInfoUrl = "http://20.62.111.133:80/api/get_user_info"; // Update with your API endpoint
 
 
     TextView displayName;
     TextView displayUsername;
-    TextView displayEmail;
-    TextView displayAge;
-    TextView displayHeight;
-    TextView displayGender;
-    TextView displayTargetWeight;
-    TextView displayTargetStep;
     ImageView statisticsButton;
     ImageView notificationButton;
     ImageView settingsButton;
@@ -51,15 +46,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         // Fetch the email corresponding to the username
         fetchEmail(username);
+        fetchUserInfo(username);
 
         displayUsername = findViewById(R.id.textViewUsername);
         displayUsername.setText(username);
-
-        displayAge = findViewById(R.id.textViewAge);
-        displayHeight = findViewById(R.id.textViewHeight);
-        displayGender = findViewById(R.id.textViewGender);
-        displayTargetStep = findViewById(R.id.textViewTargetStep);
-        displayTargetWeight = findViewById(R.id.textViewTargetWeight);
 
         accInfo = findViewById(R.id.editaccButton);
         persInfo = findViewById(R.id.editpersonButton);
@@ -157,9 +147,8 @@ public class SettingsActivity extends AppCompatActivity {
                     JSONObject response = new JSONObject(result);
                     String email = response.getString("email");
 
-                    // Display the email on the "Settings" page
-                    TextView emailTextView = findViewById(R.id.textViewEmail);
-                    emailTextView.setText("Email: " + email);
+                    TextView displayEmail = findViewById(R.id.textViewEmail);
+                    displayEmail.setText(email);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -173,4 +162,39 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
+    private void fetchUserInfo(final String username) {
+        JSONObject requestData = new JSONObject();
+        try {
+            requestData.put("username", username);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        MyVolleyRequest.postRequest(getApplicationContext(), getUserInfoUrl, requestData, new MyVolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String age = response.getString("age");
+                    String gender = response.getString("gender");
+                    String height = response.getString("height");
+
+                    TextView ageTextView = findViewById(R.id.textViewAge);
+                    TextView genderTextView = findViewById(R.id.textViewGender);
+                    TextView heightTextView = findViewById(R.id.textViewHeight);
+
+                    ageTextView.setText(age);
+                    genderTextView.setText(gender);
+                    heightTextView.setText(height + " cm");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onError(String error) {
+                // Handle error when fetching user information
+                Toast.makeText(SettingsActivity.this, "Error fetching user information", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
