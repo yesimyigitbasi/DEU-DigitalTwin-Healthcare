@@ -8,7 +8,102 @@
     android:backgroundTint="#A448B5E6">
 
 
+    <ScrollView
+        android:layout_width="333dp"
+        android:layout_height="626dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="93dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="222dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="665dp"
+                android:layout_marginEnd="152dp"
+                android:layout_marginBottom="119dp"
+                android:text="BMI" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="213dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="376dp"
+                android:layout_marginEnd="160dp"
+                android:layout_marginBottom="411dp"
+                android:text="Steps" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="151dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="82dp"
+                android:layout_marginEnd="220dp"
+                android:layout_marginBottom="703dp"
+                android:text="Weight" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/weightGraph"
+                android:layout_width="271dp"
+                android:layout_height="236dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="539dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="0dp" />
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="263dp"
+                android:layout_height="217dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="400dp"
+                app:cpb_background_progressbar_width="5dp"
+                app:cpb_background_progressbar_color="#b6bbd8"
+                app:cpb_progressbar_width="10dp"
+                app:cpb_progressbar_color="#3f51b5"/>
+
+            <TextView
+                android:id="@+id/currentStepCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="491dp"
+                android:layout_marginEnd="140dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/stepCountGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="527dp"
+                android:layout_marginEnd="137dp"
+                android:text="TextView" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
 
     <TextView
         android:id="@+id/textViewName"
@@ -19,60 +114,6 @@
         android:layout_marginTop="41dp"
         android:text="Name" />
 
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/StepBarChart"
-        android:layout_width="wrap_content"
-        android:layout_height="246dp"
-        android:layout_alignTop="@+id/textView43"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="403dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="232dp" />
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/weightGraph"
-        android:layout_width="wrap_content"
-        android:layout_height="246dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="539dp"
-        />
-
-    <TextView
-        android:id="@+id/textView40"
-        android:layout_width="151dp"
-        android:layout_height="22dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginBottom="703dp"
-        android:text="Weight" />
-
-    <TextView
-        android:id="@+id/textView41"
-        android:layout_width="213dp"
-        android:layout_height="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="376dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="411dp"
-        android:text="Steps" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar2"
@@ -113,20 +154,6 @@
         android:layout_marginEnd="192dp"
         android:layout_marginBottom="12dp"
         app:srcCompat="@android:drawable/ic_popup_reminder" />
-
-    <TextView
-        android:id="@+id/textView42"
-        android:layout_width="222dp"
-        android:layout_height="23dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="665dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="119dp"
-        android:text="BMI" />
 
 
 </RelativeLayout>

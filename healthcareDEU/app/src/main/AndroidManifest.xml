@@ -47,7 +47,9 @@
             android:name=".EditGoalsActivity"
             android:screenOrientation="portrait" />
 
-
+        <service
+            android:name=".StepResetService"
+            android:exported="false" />
 
 
     </application>
