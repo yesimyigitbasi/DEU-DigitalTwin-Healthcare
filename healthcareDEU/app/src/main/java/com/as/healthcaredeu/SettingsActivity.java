@@ -178,14 +178,21 @@ public class SettingsActivity extends AppCompatActivity {
                     String age = response.getString("age");
                     String gender = response.getString("gender");
                     String height = response.getString("height");
+                    String targetWeight = response.getString("targetweight");
+                    String targetSteps = response.getString("targetsteps");
 
                     TextView ageTextView = findViewById(R.id.textViewAge);
                     TextView genderTextView = findViewById(R.id.textViewGender);
                     TextView heightTextView = findViewById(R.id.textViewHeight);
+                    TextView targetWeightTextView = findViewById(R.id.textViewTargetWeight);
+                    TextView targetStepsTextView = findViewById(R.id.textViewTargetStep);
 
                     ageTextView.setText(age);
                     genderTextView.setText(gender);
                     heightTextView.setText(height + " cm");
+                    targetWeightTextView.setText(targetWeight + " kg");
+                    targetStepsTextView.setText(targetSteps + " steps");
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
