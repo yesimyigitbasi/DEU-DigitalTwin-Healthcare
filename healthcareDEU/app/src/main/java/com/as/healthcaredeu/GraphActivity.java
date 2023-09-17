@@ -74,7 +74,6 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
         statisticsButton = findViewById(R.id.statisticsButton);
         notificationButton = findViewById(R.id.notificationButton);
         settingsButton = findViewById(R.id.settingsButton);
-        bmi = findViewById(R.id.textViewBmi);
 
         // Retrieve the username from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -220,7 +219,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                 try {
                     JSONObject response = new JSONObject(result);
                     String bmitext = response.getString("message");
-
+                    bmi = findViewById(R.id.textViewBmi);
                     bmi.setText(bmitext);
 
                 } catch (JSONException e) {
@@ -233,7 +232,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
             @Override
             public void onError(String error) {
                 // Handle error when fetching user information
-                bmi.setText("null");
+                Toast.makeText(GraphActivity.this, "Error fetching bmi information", Toast.LENGTH_SHORT).show();
             }
         });
 
