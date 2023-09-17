@@ -1,5 +1,6 @@
 package com.as.healthcaredeu;
 
+import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -47,6 +48,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
 
     private static String getUserInfoUrl = "http://20.62.111.133:80/api/get_user_info";
     private static String getbmiUrl = "http://20.62.111.133:80/api/bmi";
+    private static String getWeightUrl = "http://20.62.111.133:80/api/get_weight";
 
     ImageView statisticsButton;
     ImageView notificationButton;
@@ -54,6 +56,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
 
     LineChart weightGraph;
     BarChart stepsBar;
+    TextView displayWeight;
     TextView displayName;
 
     TextView stepCounter;
@@ -73,6 +76,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
         notificationButton = findViewById(R.id.notificationButton);
         settingsButton = findViewById(R.id.settingsButton);
         bmi = findViewById(R.id.textViewBmi);
+        displayWeight = findViewById(R.id.textViewWeight);
 
         // Retrieve the username from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -99,6 +103,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
             isCounterSensorPresent = false;
         }
 
+        getWeight(username);
         bmiCalc(username);
 
         statisticsButton.setOnClickListener(new View.OnClickListener() {
@@ -229,4 +234,47 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
 
     }
 
+    private void getWeight(String username){
+        JSONObject requestData = new JSONObject();
+        try {
+            requestData.put("username", username);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        MyVolleyRequest.postRequest(getApplicationContext(), getWeightUrl, requestData, new MyVolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(String result)  {
+
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String weighttext = response.getString("message");
+                   // weighttext = weighttext.replace(("\"", "\\\\\"");
+                    displayWeight.setText(weighttext);
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+            }
+            @Override
+            public void onError(String error) {
+                // Handle error when fetching user information
+                displayWeight.setText("null");
+            }
+        });
+
+    }
+    class Veri {
+        private String anahtar1;
+        private String anahtar2;
+
+        // Getter ve Setter metodları
+    }
 }
+
+
