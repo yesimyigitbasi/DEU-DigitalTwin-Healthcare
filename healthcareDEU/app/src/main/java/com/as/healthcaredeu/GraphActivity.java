@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
@@ -34,6 +35,8 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,6 +53,8 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
     private static String getbmiUrl = "http://20.62.111.133:80/api/bmi";
     private static String getWeightUrl = "http://20.62.111.133:80/api/get_weight";
 
+    int stepCount = 0;
+    int targetStepCount = 0; // Declare it at the class level
     ImageView statisticsButton;
     ImageView notificationButton;
     ImageView settingsButton;
@@ -64,7 +69,9 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
     Sensor mStepCounter;
     boolean isCounterSensorPresent;
     TextView bmi;
-    int stepCount = 0;
+
+    private LineChart lineChart;
+    private RequestQueue requestQueue;
 
 
     @SuppressLint("MissingInflatedId")
@@ -181,6 +188,13 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                     //String targetWeight = response.getString("targetweight");
                     String targetSteps = response.getString("targetsteps");
 
+                    targetStepCount = Integer.parseInt(targetSteps);
+                    float progress = (float) stepCount / targetStepCount;
+                    CircularProgressBar circularProgressBar = findViewById(R.id.progress_circular);
+
+                    // Set the progress to the CircularProgressBar
+                    circularProgressBar.setProgress(progress * 100); // Progress should be in the range 0-100
+
                     //TextView targetWeightTextView = findViewById(R.id.weightGoal);
                     TextView targetStepsTextView = findViewById(R.id.stepCountGoal);
 
@@ -221,9 +235,6 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
-
             }
             @Override
             public void onError(String error) {
@@ -251,15 +262,9 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                     String weighttext = response.getString("message");
                    // weighttext = weighttext.replace(("\"", "\\\\\"");
                     displayWeight.setText(weighttext);
-
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
-
             }
             @Override
             public void onError(String error) {
