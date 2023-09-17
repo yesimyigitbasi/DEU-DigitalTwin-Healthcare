@@ -45,7 +45,8 @@ import java.util.concurrent.TimeUnit;
 
 public class GraphActivity extends AppCompatActivity implements SensorEventListener{
 
-    private static String getUserInfoUrl = "http://20.62.111.133:80/api/get_user_info"; // Update with your API endpoint
+    private static String getUserInfoUrl = "http://20.62.111.133:80/api/get_user_info";
+    private static String getbmiUrl = "http://20.62.111.133:80/api/bmi";
 
     ImageView statisticsButton;
     ImageView notificationButton;
@@ -59,6 +60,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
     SensorManager sensorManager;
     Sensor mStepCounter;
     boolean isCounterSensorPresent;
+    TextView bmi;
     int stepCount = 0;
 
 
@@ -95,6 +97,8 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
             stepCounter.setText("Step Sensor is not present");
             isCounterSensorPresent = false;
         }
+
+        bmiCalc(username);
 
         statisticsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,6 +191,41 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                 Toast.makeText(GraphActivity.this, "Error fetching user information", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+
+    private void bmiCalc(String username){
+        JSONObject requestData = new JSONObject();
+        try {
+            requestData.put("username", username);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        MyVolleyRequest.postRequest(getApplicationContext(), getbmiUrl, requestData, new MyVolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(String result)  {
+
+                try {
+                    JSONObject response = new JSONObject(result);
+                    String bmitext = response.getString("message");
+                    bmi = findViewById(R.id.textViewBmi);
+                    bmi.setText(bmitext);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
+            }
+            @Override
+            public void onError(String error) {
+                // Handle error when fetching user information
+                Toast.makeText(GraphActivity.this, "Error fetching bmi information", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 }

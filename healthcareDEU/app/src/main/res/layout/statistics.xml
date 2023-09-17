@@ -57,15 +57,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="106dp"
                 android:layout_marginEnd="14dp"
-                android:layout_marginBottom="539dp" />
+                android:layout_marginBottom="539dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="298dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="0dp" />
+            </com.github.mikephil.charting.charts.LineChart>
 
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/progress_circular"
@@ -99,6 +93,16 @@
                 android:layout_marginTop="527dp"
                 android:layout_marginEnd="137dp"
                 android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewBmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="712dp"
+                android:layout_marginEnd="136dp"
+                android:text="BMI" />
 
         </RelativeLayout>
 
