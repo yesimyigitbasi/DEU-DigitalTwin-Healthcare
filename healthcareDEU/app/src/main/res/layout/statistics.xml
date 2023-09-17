@@ -9,8 +9,8 @@
 
 
     <ScrollView
-        android:layout_width="333dp"
-        android:layout_height="626dp"
+        android:layout_width="wrap_content"
+        android:layout_height="647dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="48dp"
         android:layout_marginTop="93dp">
@@ -25,7 +25,7 @@
                 android:layout_width="222dp"
                 android:layout_height="23dp"
                 android:layout_marginStart="19dp"
-                android:layout_marginTop="665dp"
+                android:layout_marginTop="800dp"
                 android:layout_marginEnd="152dp"
                 android:layout_marginBottom="119dp"
                 android:text="BMI" />
@@ -35,7 +35,7 @@
                 android:layout_width="213dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="376dp"
+                android:layout_marginTop="550dp"
                 android:layout_marginEnd="160dp"
                 android:layout_marginBottom="411dp"
                 android:text="Steps" />
@@ -47,21 +47,30 @@
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="82dp"
                 android:layout_marginEnd="220dp"
-                android:layout_marginBottom="703dp"
+                android:layout_marginBottom="700dp"
                 android:text="Weight" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/weightGraph"
+                android:layout_width="303dp"
+                android:layout_height="228dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="560dp" />
 
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/progress_circular"
-                android:layout_width="263dp"
-                android:layout_height="217dp"
+                android:layout_width="196dp"
+                android:layout_height="185dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="51dp"
-                android:layout_marginTop="400dp"
-                app:cpb_background_progressbar_width="5dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="578dp"
                 app:cpb_background_progressbar_color="#b6bbd8"
-                app:cpb_progressbar_width="10dp"
-                app:cpb_progressbar_color="#3f51b5"/>
+                app:cpb_background_progressbar_width="5dp"
+                app:cpb_progressbar_color="#3f51b5"
+                app:cpb_progressbar_width="10dp" />
 
             <TextView
                 android:id="@+id/currentStepCount"
@@ -69,8 +78,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="491dp"
-                android:layout_marginEnd="140dp"
+                android:layout_marginTop="624dp"
+                android:layout_marginEnd="150dp"
                 android:text="TextView" />
 
             <TextView
@@ -79,8 +88,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="527dp"
-                android:layout_marginEnd="137dp"
+                android:layout_marginTop="684dp"
+                android:layout_marginEnd="151dp"
                 android:text="TextView" />
 
             <TextView
@@ -89,8 +98,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="712dp"
-                android:layout_marginEnd="136dp"
+                android:layout_marginTop="847dp"
+                android:layout_marginEnd="169dp"
                 android:text="BMI" />
 
             <TextView
@@ -100,9 +109,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="51dp"
-                android:layout_marginTop="132dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="343dp"
+                android:layout_marginEnd="39dp"
                 android:text="TextView" />
 
         </RelativeLayout>
