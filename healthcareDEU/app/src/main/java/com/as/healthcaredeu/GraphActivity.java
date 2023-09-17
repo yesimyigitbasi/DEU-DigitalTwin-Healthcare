@@ -249,8 +249,21 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                 try {
                     JSONObject response = new JSONObject(result);
                     String weighttext = response.getString("message");
-                   // weighttext = weighttext.replace(("\"", "\\\\\"");
+                    weighttext = weighttext.replace("[","");
+                    weighttext = weighttext.replace("]","");
+                    weighttext = weighttext.replace("{","");
+                    weighttext = weighttext.replace("}","");
+                   // weighttext = weighttext.replace("date_of_measurement","DATE:");
+                    weighttext = weighttext.replace(",","\n:");
+                    weighttext = weighttext.replace("\""," ");
                     displayWeight.setText(weighttext);
+                    JSONObject jsonObject = new JSONObject(weighttext);
+                    String weight = jsonObject.getString("date_of_measurement");
+                    String date = jsonObject.getString("weight");
+
+                    displayWeight.setText("alper");
+
+
 
 
 
