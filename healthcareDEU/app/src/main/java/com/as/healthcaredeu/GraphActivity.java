@@ -267,7 +267,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                     weighttext = weighttext.replace(",","\n:");
                     weighttext = weighttext.replace("\""," ");
                     displayWeight.setText(weighttext);
-                    displayWeight.setText(weighttext);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
