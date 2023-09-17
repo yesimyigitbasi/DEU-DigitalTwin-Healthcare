@@ -260,7 +260,13 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                 try {
                     JSONObject response = new JSONObject(result);
                     String weighttext = response.getString("message");
-                   // weighttext = weighttext.replace(("\"", "\\\\\"");
+                    weighttext = weighttext.replace("[","");
+                    weighttext = weighttext.replace("]","");
+                    weighttext = weighttext.replace("{","");
+                    weighttext = weighttext.replace("}","");
+                    weighttext = weighttext.replace(",","\n:");
+                    weighttext = weighttext.replace("\""," ");
+                    displayWeight.setText(weighttext);
                     displayWeight.setText(weighttext);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -274,12 +280,7 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
         });
 
     }
-    class Veri {
-        private String anahtar1;
-        private String anahtar2;
 
-        // Getter ve Setter metodları
-    }
 }
 
 
