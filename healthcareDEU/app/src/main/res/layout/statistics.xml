@@ -50,15 +50,6 @@
                 android:layout_marginBottom="700dp"
                 android:text="Weight" />
 
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/weightGraph"
-                android:layout_width="303dp"
-                android:layout_height="228dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="106dp"
-                android:layout_marginEnd="14dp"
-                android:layout_marginBottom="560dp" />
-
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/progress_circular"
                 android:layout_width="196dp"
@@ -109,9 +100,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="343dp"
-                android:layout_marginEnd="39dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="137dp"
+                android:layout_marginEnd="54dp"
                 android:text="TextView" />
 
         </RelativeLayout>
