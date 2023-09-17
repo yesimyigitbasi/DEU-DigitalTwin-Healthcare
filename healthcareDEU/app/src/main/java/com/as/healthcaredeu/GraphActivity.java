@@ -33,6 +33,8 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,12 +50,13 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
     private static String getUserInfoUrl = "http://20.62.111.133:80/api/get_user_info";
     private static String getbmiUrl = "http://20.62.111.133:80/api/bmi";
 
+    int stepCount = 0;
+    int targetStepCount = 0; // Declare it at the class level
     ImageView statisticsButton;
     ImageView notificationButton;
     ImageView settingsButton;
 
     LineChart weightGraph;
-    BarChart stepsBar;
     TextView displayName;
 
     TextView stepCounter;
@@ -61,7 +64,6 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
     Sensor mStepCounter;
     boolean isCounterSensorPresent;
     TextView bmi;
-    int stepCount = 0;
 
 
     @SuppressLint("MissingInflatedId")
@@ -175,11 +177,19 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
                     //String targetWeight = response.getString("targetweight");
                     String targetSteps = response.getString("targetsteps");
 
+                    targetStepCount = Integer.parseInt(targetSteps);
+                    float progress = (float) stepCount / targetStepCount;
+                    CircularProgressBar circularProgressBar = findViewById(R.id.progress_circular);
+
+                    // Set the progress to the CircularProgressBar
+                    circularProgressBar.setProgress(progress * 100); // Progress should be in the range 0-100
                     //TextView targetWeightTextView = findViewById(R.id.weightGoal);
                     TextView targetStepsTextView = findViewById(R.id.stepCountGoal);
 
                     //targetWeightTextView.setText(targetWeight + " kg");
                     targetStepsTextView.setText(targetSteps + " steps");
+
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -227,5 +237,6 @@ public class GraphActivity extends AppCompatActivity implements SensorEventListe
         });
 
     }
+
 
 }
