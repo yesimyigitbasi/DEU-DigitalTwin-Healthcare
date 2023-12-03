@@ -1,55 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#A448B5E6"
-    android:backgroundTint="#A448B5E6">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/healthcare" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp">
 
         <Button
             android:id="@+id/createAccButton"
-            android:layout_width="wrap_content"
+            android:layout_width="356dp"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/signUpButtonHomeScreen"
             android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="115dp"
-            android:layout_marginBottom="281dp"
-            android:text="Create an account" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="25dp"
+            android:text="Create an account"
+            android:textColorHighlight="#DC3C3C" />
 
         <Button
             android:id="@+id/signUpButtonHomeScreen"
-            android:layout_width="140dp"
+            android:layout_width="347dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="125dp"
-            android:layout_marginEnd="128dp"
-            android:layout_marginBottom="197dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="40dp"
             android:text="Sign in" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="247dp"
-            android:layout_marginEnd="147dp"
-            android:text="Learn your body!" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="634dp"
+            android:gravity="center"
+            android:text="Learn your body!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="418dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="101dp"
-            android:layout_marginBottom="461dp"
-            android:text="Let's start building a healthy life." />
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="186dp"
+            android:layout_marginEnd="-6dp"
+            android:layout_marginBottom="379dp"
+            android:gravity="center"
+            android:text="Let's start\n building\n a healthy life."
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:typeface="serif" />
 
     </RelativeLayout>
 
